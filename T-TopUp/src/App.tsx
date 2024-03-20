@@ -8,7 +8,8 @@ function App() {
 
   return (
     <>
-    {/* Jui was here */}
+    {/* Jui was here 
+      Thames was here*/}
       <div>
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
