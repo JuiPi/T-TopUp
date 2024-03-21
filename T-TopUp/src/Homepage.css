@@ -1,0 +1,64 @@
+.nav1 {
+    
+    background-color: #021024;
+    text-align: right;
+}
+
+.nav1 a {
+    padding: 20px;
+    color: white;
+
+}
+
+.nav2 {
+    background-color: #5483B3;
+    margin: 0 px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+
+}
+
+.nav2 a{
+    color: white;
+    display: block;
+    float: left;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.logosize {
+    width: 50px;
+}
+
+.footerbar{
+    height: 140px;
+    background-color: #456789;
+    padding: 0px;
+    }
+    
+    .footercon{
+        font-size: 18px;
+        font-weight: 400;
+        padding: 0px;
+        color: #FFFFFF;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .circle-container {
+        display: flex;
+        justify-content: center;
+      }
+      
+    .circle {
+        padding-bottom: 0px;
+        width: 43.107px;
+        height: 43.107px;
+        border-radius: 50%; 
+        background-color: #ffffff;
+        margin: 15px;
+      }
+      
