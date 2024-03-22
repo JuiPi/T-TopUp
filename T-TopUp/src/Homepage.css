@@ -123,7 +123,8 @@ body, html {
 
 /* Footer */
 .footerbar{
-    height: 140px;
+    margin-bottom: 0px;
+    height: 145px;
     background-color: #456789;
     padding: 0px;
     }
@@ -131,7 +132,8 @@ body, html {
 .footercon{
     font-size: 18px;
     font-weight: 400;
-    padding: 0px;
+    padding: 3px;
+    margin: auto;
     color: #FFFFFF;
     display: flex;
     justify-content: center;
@@ -144,7 +146,7 @@ body, html {
 }
       
 .circle {
-    padding-bottom: 0px;
+    padding: auto;
     width: 43.107px;
     height: 43.107px;
     border-radius: 50%; 
