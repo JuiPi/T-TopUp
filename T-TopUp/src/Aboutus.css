@@ -1,16 +1,3 @@
-.TeamMem{
-    padding-top: 3%;
-    text-align: center;
-    font-size: 48px;
-    font-weight: 600;
-}
-
-.NameTeamM{
-    font-size: 20px;
-    font-weight: bold;
-    
-}
-
 .container {
     display: flex;
     justify-content: center;
@@ -20,6 +7,7 @@
   
 .grid-container {
 display: flex;
+overflow: auto;
 justify-content: space-between;
 height: 85%; 
 width: 95%; 
@@ -27,10 +15,62 @@ max-width: 99%;
 }
 
 .column {
+text-align: center;
 border-radius: 10px;
 background-color: #ccc;
 padding: 1rem;
 flex: 1; 
-margin: 2.4rem;
+margin-top: 50px;
+margin-right: 20px;
 }
 
+.TeamMem{
+    padding-top: 3%;
+    text-align: center;
+    font-size: 48px;
+    font-weight: 600;
+}
+
+.NameTeamM{
+    font-size: 32px;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+}
+
+.Picadjust {
+    display: flex;
+    justify-content: center;
+}
+      
+.PicFrame {
+    width: 122px;
+    height: 122px;
+    border-radius: 50%;
+    background-color: #000000;
+    margin-top: -65px;
+}
+
+.PersonName{
+    margin: 20;
+    padding: 20;
+    font-size: 32px;
+    font-weight: 450;
+}
+
+.GapName {
+    margin: 0; 
+    padding: 0; 
+    margin-bottom: 0.5rem;
+}
+
+.GapEmail{
+    padding-top: 25px;
+    font-size: 16px;
+}
+
+.GapNum{
+    font-size: 32px;
+    padding-top: 25px;
+    font-weight: 450;
+}
