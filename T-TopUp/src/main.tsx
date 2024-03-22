@@ -10,6 +10,6 @@ import './Aboutus.css'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <Aboutus />
+    <Homepage />
   </React.StrictMode>,
 )
