@@ -1,3 +1,5 @@
+import picture from "./logo.png";
+
 function Aboutus(){
   return(
     <>
@@ -7,7 +9,7 @@ function Aboutus(){
         </nav>
         <nav className="nav2">
             <a href="Homepage.tsx">
-                <img src="image.png" alt="Logo" className="logosize"></img>
+                <img src={picture} alt="Logo" className="logosize"></img>
             </a>
             <a href="Homepage.tsx">Home</a>
             <a href="#">Games</a>
