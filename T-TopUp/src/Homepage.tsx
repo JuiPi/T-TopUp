@@ -22,18 +22,68 @@ function Homepage() {
           </nav>
           <section>
             <div className="slider">
-                <div className="slides">
-                    <img id="slide-1" src={ad1} alt="ad1"></img>
-                    <img id="slide-2" src={ad2} alt="ad2"></img>
-                    <img id="slide-3" src={ad3} alt="ad3"></img>
-                    <a className="prev">&#10094</a>
-                    <a className="next">&#10095</a>
-                </div>
+              <div className="slides">
+                <img id="slide-1" src={ad1} alt="ad1"></img>
+                <img id="slide-2" src={ad1} alt="ad2"></img>
+                <img id="slide-3" src={ad1} alt="ad3"></img>
+                
+                <a className="prev" onClick={() => plusSlides(-1)}>&#10094;</a>
+                <a className="next" onClick={() => plusSlides(1)}>&#10095;</a>
+              </div>
+              <div className="slider-nav">
+                <a href="#slide-1"></a>
+                <a href="#slide-2"></a>
+                <a href="#slide-3"></a>
+              </div>
             </div>
           </section>
         </header>
       </body>
+      <footer className="footerbar">
+        <div className="circle-container">
+          <div className='circle'>img</div>
+          <div className='circle'>img</div>
+          <div className='circle'>img</div>
+        </div>
+      <p className="footercon">2024 Copyrights YuthPong co.</p>
+      <p className="footercon">About us</p>
+      </footer>
     </>
   );
 }
+
+// const [slideIndex, setSlideIndex] = useState<number>(1);
+
+// const plusSlides = (n: number) => {
+//   showSlides(slideIndex +n);
+// };
+
+// const currentSlide = (n: number) => {
+//   showSlides(n);
+// };
+
+// const showSlides = (n: number) => {
+//   let i: number;
+//   const slides = document.getElementsByClassName("mySlides") as HTMLCollectionOf<HTMLElement>
+//   const dots = document.getElementsByClassName("dot");
+
+//   if(n > slides.length) {
+//     setSlideIndex(1);
+//   }
+//   if(n < 1) {
+//     setSlideIndex(slides.length);
+//   }
+
+//   for (i=0; i < slides.length; i++) {
+//     slides[i].style.display = "none";
+//   }
+
+//   for (i=0; i < dots.length; i++){
+//     dots[i].className = dots[i].className.replace(" active", "");
+//   }
+
+//   slides[slideIndex - 1].style.display = "block";
+//   dots[slideIndex - 1].className += " active";
+// };
+
 export default Homepage;
