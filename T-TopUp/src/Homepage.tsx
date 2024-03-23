@@ -2,24 +2,15 @@ import picture from "./logo.png";
 import ad1 from "./Game icon/Valorant/Val_banner.png"
 import ad2 from "./Game icon/TF2/tf2_banner.png"
 import ad3 from "./Game icon/OW/OW_banner.png"
+import NavBar from "./Components/NavBar";
+import Footer from "./Components/Footer";
 
 function Homepage() {
   return (
     <>
       <body>
         <header>
-          <nav className="nav1">
-            <a href="#">Log in</a>
-          </nav>
-          <nav className="nav2">
-            <a href="Homepage.tsx">
-              <img src={picture} alt="Logo" className="logosize"></img>
-            </a>
-            <a href="Homepage.tsx">Home</a>
-            <a href="#">Games</a>
-            <a href="#">User Management</a>
-            <a href="#">Product Management</a>
-          </nav>
+          <NavBar/>
           <section>
             <div className="slider">
               <div className="slides">
@@ -39,15 +30,7 @@ function Homepage() {
           </section>
         </header>
       </body>
-      <footer className="footerbar">
-        <div className="circle-container">
-          <div className='circle'>img</div>
-          <div className='circle'>img</div>
-          <div className='circle'>img</div>
-        </div>
-      <p className="footercon">2024 Copyrights YuthPong co.</p>
-      <p className="footercon">About us</p>
-      </footer>
+    <Footer/>
     </>
   );
 }
