@@ -9,26 +9,76 @@ function Homepage() {
     <>
       <body>
         <header>
-          <NavBar/>
-          <section>
-            <div className="slider">
-              <div className="slides">
-                <img id="slide-1" src={ad1} alt="ad1"></img>
-                <img id="slide-2" src={ad1} alt="ad2"></img>
-                <img id="slide-3" src={ad1} alt="ad3"></img>
-                
-                <a className="prev" onClick={() => plusSlides(-1)}>&#10094;</a>
-                <a className="next" onClick={() => plusSlides(1)}>&#10095;</a>
-              </div>
-              <div className="slider-nav">
-                <a href="#slide-1"></a>
-                <a href="#slide-2"></a>
-                <a href="#slide-3"></a>
-              </div>
-            </div>
-          </section>
+          <NavBar/>  
         </header>
+        <article>
+          <div className="slider">
+            <div className="slides">
+              <img id="slide-1" src={ad1} alt="ad1"></img>
+              <img id="slide-2" src={ad1} alt="ad2"></img>
+              <img id="slide-3" src={ad1} alt="ad3"></img>  
+              <a className="prev">&#10094;</a>
+              <a className="next">&#10095;</a>
+            </div>
+            <div className="slider-nav">
+              <a href="#slide-1"></a>
+              <a href="#slide-2"></a>
+              <a href="#slide-3"></a>
+            </div>
+          </div>
+        </article>
       </body>
+      <h1>All Games</h1>
+      <article className="container">
+        <article className="gamecolumn">
+          <section className="imggame">
+            <img src="logogame.png"></img>
+          </section>
+          <section className="gamename">Valorant</section>
+        </article>
+        <article className="gamecolumn">
+          <section className="imggame">
+            <img src="logogame.png"></img>
+          </section>
+          <section className="gamename">Valorant</section>
+        </article>
+        <article className="gamecolumn">
+          <section className="imggame">
+            <img src="logogame.png"></img>
+          </section>
+          <section className="gamename">Valorant</section>
+        </article>
+        <article className="gamecolumn">
+          <section className="imggame">
+            <img src="logogame.png"></img>
+          </section>
+          <section className="gamename">Valorant</section>
+        </article>
+        <article className="gamecolumn">
+          <section className="imggame">
+            <img src="logogame.png"></img>
+          </section>
+          <section className="gamename">Valorant</section>
+        </article>
+        <article className="gamecolumn">
+          <section className="imggame">
+            <img src="logogame.png"></img>
+          </section>
+          <section className="gamename">Valorant</section>
+        </article>
+        <article className="gamecolumn">
+          <section className="imggame">
+            <img src="logogame.png"></img>
+          </section>
+          <section className="gamename">Valorant</section>
+        </article>
+        <article className="gamecolumn">
+          <section className="imggame">
+            <img src="logogame.png"></img>
+          </section>
+          <section className="gamename">Valorant</section>
+        </article>
+      </article>
     <Footer/>
     </>
   );

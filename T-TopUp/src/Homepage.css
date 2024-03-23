@@ -121,13 +121,50 @@ body, html {
     background-color: rgba(0,0,0,0.8);
 }
 
+/* Game content */
+.container {
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-bottom: 50px;
+    justify-content: justify;
+}
+
+.gamecolumn {
+    padding: 40px;
+    margin: 10px;
+    border-radius: 20px;
+    background-color: white;
+    border: solid white 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.gameicon {
+    margin: 25px;
+    width: 200px;
+    height: 200px;
+    border-radius: 15%;
+    color: white;
+    background-color: #d9d9d9;
+    text-align: center;
+}
+
+.gamename {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
 /* Footer */
 .footerbar{
     margin-bottom: 0px;
     height: 145px;
     background-color: #456789;
     padding: 0px;
-    }
+}
     
 .footercon{
     font-size: 18px;
