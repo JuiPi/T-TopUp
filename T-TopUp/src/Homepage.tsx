@@ -1,7 +1,6 @@
-import picture from "./logo.png";
-import ad1 from "./Game icon/Valorant/Val_banner.png"
-import ad2 from "./Game icon/TF2/tf2_banner.png"
-import ad3 from "./Game icon/OW/OW_banner.png"
+import ad1 from "./assets/Game icon/Valorant/Val_banner.png"
+import ad2 from "./assets/Game icon/TF2/tf2_banner.png"
+import ad3 from "./assets/Game icon/OW/OW_banner.png"
 import NavBar from "./Components/NavBar";
 import Footer from "./Components/Footer";
 

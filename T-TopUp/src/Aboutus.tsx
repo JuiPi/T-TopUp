@@ -1,6 +1,5 @@
 import NavBar from "./Components/NavBar";
 import Footer from "./Components/Footer";
-import picture from "./logo.png";
 
 function Aboutus(){
   return(
