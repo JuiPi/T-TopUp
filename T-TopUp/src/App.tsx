@@ -6,6 +6,7 @@ import Aboutus from "./Aboutus";
 import Homepage from "./Homepage";
 import ProdMng from "./ProdMng";
 import AddADMIN from "./AddADMIN";
+import UserManagement from "./UserManagement";
 
 import './Homepage.css'
 import './Aboutus.css'
@@ -16,7 +17,7 @@ function App() {
 
   return (
     <>
-      <App />
+      <UserManagement />
     </>
   );
 }
