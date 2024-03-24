@@ -25,62 +25,80 @@ function ProdMng() {
 
         <div className="game-container">
           <div className="game">
-            <img className="gameIcon" src={addg}></img>
-            <p>game name</p>
+            <div className="iconArea">
+              <img className="g-icon" src={addg}></img>
+            </div>
+            <p>Add Game</p>
           </div>
 
           <div className="game">
-            <img className="gameIcon" src={ff}></img>
-            <img className="editIcon" src={edit}></img>
+            <div className="iconArea">
+              <img className="g-icon" src={ff}></img>
+              <img className="editIcon" src={edit}></img>
+            </div>
             <div className="close">X</div>
             <p>Fifa</p>
           </div>
 
           <div className="game">
-            <img className="gameIcon" src={lol}></img>
-            <img className="editIcon" src={edit}></img>
+            <div className="iconArea">
+              <img className="g-icon" src={lol}></img>
+              <img className="editIcon" src={edit}></img>
+            </div>
             <div className="close">X</div>
             <p>League of Legends</p>
           </div>
 
           <div className="game">
-            <img className="gameIcon" src={ow}></img>
-            <img className="editIcon" src={edit}></img>
+            <div className="iconArea">
+              <img className="g-icon" src={ow}></img>
+              <img className="editIcon" src={edit}></img>
+            </div>
             <div className="close">X</div>
             <p>Overwatch</p>
           </div>
 
           <div className="game">
-            <img className="gameIcon" src={rov}></img>
-            <img className="editIcon" src={edit}></img>
+            <div className="iconArea">
+              <img className="g-icon" src={rov}></img>
+              <img className="editIcon" src={edit}></img>
+            </div>
             <div className="close">X</div>
             <p>ROV</p>
           </div>
 
           <div className="game">
-            <img className="gameIcon" src={tf2}></img>
-            <img className="editIcon" src={edit}></img>
+            <div className="iconArea">
+              <img className="g-icon" src={tf2}></img>
+              <img className="editIcon" src={edit}></img>
+            </div>
             <div className="close">X</div>
             <p>Team Fortress 2</p>
           </div>
 
           <div className="game">
-            <img className="gameIcon" src={tft}></img>
-            <img className="editIcon" src={edit}></img>
+            <div className="iconArea">
+              <img className="g-icon" src={tft}></img>
+              <img className="editIcon" src={edit}></img>
+            </div>
             <div className="close">X</div>
             <p>Teamfight Tactics</p>
           </div>
 
           <div className="game">
-            <img className="gameIcon" src={val}></img>
-            <img className="editIcon" src={edit}></img>
+            <div className="iconArea">
+              <img className="g-icon" src={val}></img>
+              <img className="editIcon" src={edit}></img>
+            </div>
             <div className="close">X</div>
             <p>Valorant</p>
           </div>
 
           <div className="game">
-            <img className="gameIcon" src={rb}></img>
-            <img className="editIcon" src={edit}></img>
+            <div className="iconArea">
+              <img className="g-icon" src={rb}></img>
+              <img className="editIcon" src={edit}></img>
+            </div>
             <div className="close">X</div>
             <p>Roblox</p>
           </div>
