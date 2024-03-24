@@ -3,13 +3,13 @@
     justify-content: center;
     align-items: center;
     height: 80vh;
+    margin-left: 10%;
 }
   
 .grid-container {
 display: flex;
-overflow: auto;
-justify-content: space-between;
-height: 85%; 
+justify-content: center;
+height: 650px; 
 width: 95%; 
 max-width: 99%; 
 }
@@ -33,7 +33,7 @@ margin-right: 20px;
 
 .NameTeamM{
     font-size: 32px;
-    font-weight: bold;
+    font-weight: 650    ;
     justify-content: center;
     align-items: center;
 }
@@ -54,7 +54,7 @@ margin-right: 20px;
 .PersonName{
     margin: 20;
     padding: 20;
-    font-size: 32px;
+    font-size: 24px;
     font-weight: 450;
 }
 
@@ -72,5 +72,5 @@ margin-right: 20px;
 .GapNum{
     font-size: 32px;
     padding-top: 25px;
-    font-weight: 450;
+    font-weight: 650;
 }
