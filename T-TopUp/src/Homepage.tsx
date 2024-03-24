@@ -1,22 +1,22 @@
-import ad1 from "./assets/Game icon/Valorant/Val_banner.png"
-import ad2 from "./assets/Game icon/TF2/tf2_banner.png"
-import ad3 from "./assets/Game icon/OW/OW_banner.png"
+import ad1 from "./assets/Game_icon/Val/val_banner.png";
+import ad2 from "./assets/Game_icon/TF2/tf2_banner.png";
+import ad3 from "./assets/Game_icon/OW/ow_banner.png";
 import NavBar from "./Components/NavBar";
 import Footer from "./Components/Footer";
 
 function Homepage() {
   return (
     <>
+      <header>
+        <NavBar />
+      </header>
       <body>
-        <header>
-          <NavBar/>  
-        </header>
         <article>
           <div className="slider">
             <div className="slides">
               <img id="slide-1" src={ad1} alt="ad1"></img>
-              <img id="slide-2" src={ad1} alt="ad2"></img>
-              <img id="slide-3" src={ad1} alt="ad3"></img>  
+              <img id="slide-2" src={ad2} alt="ad2"></img>
+              <img id="slide-3" src={ad3} alt="ad3"></img>
               <a className="prev">&#10094;</a>
               <a className="next">&#10095;</a>
             </div>
@@ -79,7 +79,7 @@ function Homepage() {
           <section className="gamename">Valorant</section>
         </article>
       </article>
-    <Footer/>
+      <Footer />
     </>
   );
 }
