@@ -7,15 +7,15 @@ function NavBar() {
       <nav className="nav1">
         <a href="#">Log in</a>
       </nav>
-      <nav className="nav2">
-        <a href="Homepage.tsx">
+      <switch className="nav2">
+        <a href="Homepage">
           <img src={picture} alt="Logo" className="logosize"></img>
         </a>
-        <a href="Homepage.tsx">Home</a>
-        <a href="#">Games</a>
-        <a href="#">User Management</a>
-        <a href="#">Product Management</a>
-      </nav>
+        <a href="Homepage">Home</a>
+        <a href="Games">Games</a>
+        <a href="UserManagement">User Management</a>
+        <a href="ProductManagement">Product Management</a>
+      </switch>
     </>
   );
 }
