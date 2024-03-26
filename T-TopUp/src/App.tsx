@@ -8,16 +8,12 @@ import ProdMng from "./ProdMng";
 import AddADMIN from "./AddADMIN";
 import UserManagement from "./UserManagement";
 
-import "./Homepage.css";
-import "./Aboutus.css";
-import "./ProdMng.css";
-import "./AddADMIN.css";
 function App() {
   const [count, setCount] = useState(0);
 
   return (
     <>
-      <ProdMng />
+      <Aboutus />
     </>
   );
 }

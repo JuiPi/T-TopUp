@@ -1,0 +1,31 @@
+.footerbar{
+    margin-bottom: 0px;
+    height: 145px;
+    background-color: #456789;
+    padding: 0px;
+}
+    
+.footercon{
+    font-size: 18px;
+    font-weight: 400;
+    padding: 3px;
+    margin: auto;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    
+.circle-container {
+    display: flex;
+    justify-content: center;
+}
+      
+.circle {
+    padding: auto;
+    width: 43.107px;
+    height: 43.107px;
+    border-radius: 50%; 
+    background-color: #ffffff;
+    margin: 15px;
+}

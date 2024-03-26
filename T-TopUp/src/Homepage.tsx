@@ -3,6 +3,7 @@ import ad2 from "./assets/Game_icon/TF2/tf2_banner.png";
 import ad3 from "./assets/Game_icon/OW/ow_banner.png";
 import NavBar from "./Components/NavBar";
 import Footer from "./Components/Footer";
+import "./Homepage.css";
 
 function Homepage() {
   return (

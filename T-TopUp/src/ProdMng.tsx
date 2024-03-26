@@ -10,6 +10,7 @@ import val from "./assets/Game_icon/Val/val_icon.png";
 import rb from "./assets/Game_icon/Roblox/rob_icon.png";
 import addg from "./assets/Misc/add_game.png";
 import edit from "./assets/Misc/Edit_Cover.png";
+import "./ProdMng.css";
 
 function ProdMng() {
   return (
@@ -19,7 +20,7 @@ function ProdMng() {
       </header>
 
       <body>
-        <p className="title">Product Management</p>
+        <p id="title">Product Management</p>
         <p className="allG">All Games</p>
         {/* <div className="display"> */}
 

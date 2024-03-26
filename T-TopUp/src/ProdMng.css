@@ -64,7 +64,8 @@
     font-size: 18px;
 }
 
-.title {
+#title {
+    padding-top: 20px;
     font-size: 40px;
     font-weight: bold;
     text-align: center;

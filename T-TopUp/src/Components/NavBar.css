@@ -1,0 +1,33 @@
+.nav1 {
+    width: 100%;
+    background-color: #021024;
+    text-align: right;
+}
+
+.nav1 a {
+    padding: 20px;
+    color: white;
+
+}
+
+.nav2 {
+    background-color: #5483B3;
+    margin: 0 px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+
+}
+
+.nav2 a{
+    color: white;
+    display: block;
+    float: left;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.logosize {
+    width: 50px;
+}

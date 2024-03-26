@@ -5,6 +5,7 @@ import mac from "./assets/About_Us/mac.png"
 import thames from "./assets/About_Us/thames.png"
 import term from "./assets/About_Us/term.png"
 import pran from "./assets/About_Us/pran.png"
+import "./Aboutus.css";
 
 function Aboutus() {
   return (
