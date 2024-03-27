@@ -2,15 +2,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80vh;
+    height: 77.7vh;
+    overflow: hidden;
 }
 
 .UserManageFrame{
+    justify-items: center;
+    align-items: center;
     text-align: center;
-    margin: px;
     display: block;
-    Width: 65%;
-    height: 80%;
+    Width: 1280px;
+    height: 640px;
     Top: 170px;
     Left:99px;
     border-radius:45px;
@@ -23,8 +25,8 @@
 }
       
 .UserPic {
-    width: 112px;
-    height: 112px;
+    width: 125px;
+    height: 125px;
     border-radius: 50%;
     background-color: #000000;
     margin-top: -56px;
@@ -35,29 +37,42 @@
     display: flex;
     justify-content: center;
 }
-  
-.Add {
-    width: 15%;
-    padding: 18px;
-    border-radius: 5px;
-    margin-left: 85px; 
-    margin-right: 85px;
-}
 
-.input{
-    margin-bottom: 20px;
-}
-  
-.input p {
+
+.inputsRow label {
+    display: flex;
     font-weight: bold;
     margin-bottom: 5px;
 }
 
+.inputGroup {
+    display: flex;
+    margin-left: 65px;
+    flex-direction: column;
+}
+
+.inputGroup input {
+    width: 350px;
+    margin-top: 5px;
+    margin-right: 65px;
+    justify-items: center;
+    border: 2.5px solid #000000;
+}
+
+.Add{
+    padding: 15px;
+    padding-right: 30px;
+    border-radius: 10px;
+}
+
 .Submitbutton{
-    padding: 18px;
-    margin-top: 25px;
-    border-radius: 5px;
-    width: 5%;
+    margin: 45px;
+    font-size: 20px;
+    font-weight: 800;
+    color: #ffffff;
+    height: 40px;
+    width: 150px;
     text-align: center;
     justify-content: center;
+    background-color: #456789;
 }
