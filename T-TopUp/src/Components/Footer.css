@@ -22,6 +22,7 @@
 }
       
 .circle {
+    /* display: inline-block; */
     padding: auto;
     width: 43.107px;
     height: 43.107px;

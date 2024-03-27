@@ -3,6 +3,15 @@ import ad2 from "./assets/Game_icon/TF2/tf2_banner.png";
 import ad3 from "./assets/Game_icon/OW/ow_banner.png";
 import NavBar from "./Components/NavBar";
 import Footer from "./Components/Footer";
+import "./Homepage.css"
+import ff from "./assets/Game_icon/Fifa/ff_icon.png";
+import lol from "./assets/Game_icon/LOL/lol_icon.png";
+import ow from "./assets/Game_icon/OW/ow_icon.png";
+import rov from "./assets/Game_icon/ROV/rov_icon.png";
+import tf2 from "./assets/Game_icon/TF2/tf2_icon.png";
+import tft from "./assets/Game_icon/TFT/tft_icon.png";
+import val from "./assets/Game_icon/Val/val_icon.png";
+import rb from "./assets/Game_icon/Roblox/rob_icon.png";
 
 function Homepage() {
   return (

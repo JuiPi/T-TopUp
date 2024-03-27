@@ -8,12 +8,14 @@ import ProdMng from "./ProdMng";
 import AddADMIN from "./AddADMIN";
 import UserManagement from "./UserManagement";
 
+
+
 function App() {
   const [count, setCount] = useState(0);
 
   return (
     <>
-      <ProdMng />
+      <AddADMIN />
     </>
   );
 }
