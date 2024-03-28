@@ -12,7 +12,7 @@ function AddADMIN() {
 
       <body>
         <div className="Body">
-          <div className="UserManageFrame">
+          <div className="UserManageFrame drop-shadow">
             <div className="UserPicAdj">
               {/* ADD ADMIN IMAGE */}
               <img className="UserPic" src={Edit_Cover}></img>
@@ -26,7 +26,7 @@ function AddADMIN() {
                 </div>
 
               <div className="inputGroup">
-                <label>FirstName</label>
+                <label>First Name</label>
                   <input type="text" className="Add" />
               </div>
             </div>
@@ -39,7 +39,7 @@ function AddADMIN() {
                   </div>
                 
                   <div className="inputGroup">
-                    <label>LastName</label>
+                    <label>Last Name</label>
                       <input type="text" className="Add" />
                   </div>
                 </div>
