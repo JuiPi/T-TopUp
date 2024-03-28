@@ -14,11 +14,11 @@ function Aboutus() {
         <NavBar />
       </header>
       {/*  */}
-      <body>
+    <body>
         <div>
           <p className="TeamMem">Our Team Members</p>
         </div>
-
+      <div className="flex justify-center">
         <div className="container">
           <div className="grid-container">
             {/*  */}
@@ -111,7 +111,8 @@ function Aboutus() {
             </div>
           </div>
         </div>
-      </body>
+      </div>
+    </body>
 
       <Footer />
     </>
