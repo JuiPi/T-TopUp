@@ -7,7 +7,7 @@ import Homepage from "./Homepage";
 import ProdMng from "./ProdMng";
 import AddADMIN from "./AddADMIN";
 import UserManagement from "./UserManagement";
-
+import EditADMIN from "./EditADMIN";
 
 
 function App() {
@@ -18,8 +18,9 @@ function App() {
       {/* <Homepage /> */}
       {/* <Aboutus /> */}
       {/* <ProdMng /> */}
-      <AddADMIN />
       {/* <UserManagement /> */}
+      {/* <AddADMIN /> */}
+      <EditADMIN/>
     </>
   );
 }
