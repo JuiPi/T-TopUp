@@ -15,7 +15,11 @@ function App() {
 
   return (
     <>
+      {/* <Homepage /> */}
+      {/* <Aboutus /> */}
+      {/* <ProdMng /> */}
       <AddADMIN />
+      {/* <UserManagement /> */}
     </>
   );
 }

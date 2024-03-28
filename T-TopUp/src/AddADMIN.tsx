@@ -21,26 +21,26 @@ function AddADMIN() {
             <div>
               <div className="inputsRow">
                 <div className="inputGroup">
-                  <label htmlFor="username">Username</label>
-                    <input type="text" id="username" className="Add" />
+                  <label >Username</label>
+                    <input type="text"  className="Add" />
                 </div>
 
               <div className="inputGroup">
-                <label htmlFor="firstName">FirstName</label>
-                  <input type="text" id="firstName" className="Add" />
+                <label>FirstName</label>
+                  <input type="text" className="Add" />
               </div>
             </div>
 
               <div>
                 <div className="inputsRow">
                   <div className="inputGroup">
-                    <label htmlFor="username">Email</label>
-                      <input type="text" id="username" className="Add" />
+                    <label >Email</label>
+                      <input type="text"  className="Add" />
                   </div>
                 
                   <div className="inputGroup">
-                    <label htmlFor="firstName">LastName</label>
-                      <input type="text" id="firstName" className="Add" />
+                    <label>LastName</label>
+                      <input type="text" className="Add" />
                   </div>
                 </div>
               </div>
@@ -48,13 +48,13 @@ function AddADMIN() {
               <div>
                 <div className="inputsRow">
                   <div className="inputGroup">
-                    <label htmlFor="username">Password</label>
-                      <input type="text" id="username" className="Add" />
+                    <label >Password</label>
+                      <input type="text"  className="Add" />
                   </div>
                 
                   <div className="inputGroup">
-                    <label htmlFor="firstName">Telephone</label>
-                      <input type="text" id="firstName" className="Add" />
+                    <label>Telephone</label>
+                      <input type="text"className="Add" />
                   </div>
                 </div>
               </div>
