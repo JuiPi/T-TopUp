@@ -1,0 +1,29 @@
+import NavBar from "./Components/NavBar";
+import Footer from "./Components/Footer";
+import Success from "./assets/Misc/Success.png"
+import './PaymentSuccessful.css'
+
+
+function PaymentSuccessful(){
+return(
+    <>
+    <NavBar />
+
+    <div className="payment-container">
+        <div className="payment-icon">
+            <img src={Success}></img>
+        </div>
+        <div className="payment-text">
+            <h1>Payment Successful</h1>
+        </div>
+        
+        <button className="back">Back to Menu</button>
+    </div>
+    
+    <Footer/>
+    
+    </>
+)
+}
+
+export default PaymentSuccessful
