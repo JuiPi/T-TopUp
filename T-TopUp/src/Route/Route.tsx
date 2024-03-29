@@ -5,6 +5,7 @@ import ProdMng from "../ProdMng";
 import AddADMIN from "../AddADMIN";
 import UserManagement from "../UserManagement";
 import EditADMIN from "../EditADMIN";
+import GameDetail from "../game_detail/game_detail"
 import App from "../App";
 
 
@@ -19,6 +20,7 @@ export const router = createBrowserRouter([
             {path: "addadmin", element:<AddADMIN/>},
             {path: "adminmanagement", element:<UserManagement/>},
             {path: "editadmin", element:<EditADMIN/>},
+            {path: "gamedetail", element:<GameDetail/>}
             
         ]
     }
