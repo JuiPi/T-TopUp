@@ -6,6 +6,8 @@ import AddADMIN from "../AddADMIN";
 import UserManagement from "../UserManagement";
 import EditADMIN from "../EditADMIN";
 import GameDetail from "../game_detail/game_detail"
+import PaymentSuccessful from "../PaymentSuccessful";
+import LogIn from "../LogIn";
 import App from "../App";
 
 
@@ -15,13 +17,14 @@ export const router = createBrowserRouter([
         element:<App/>,
         children:[
             {path: "", element:<Homepage/>},
-            {path: "aboutus", element:<Aboutus/>},
-            {path: "Productmanagement", element:<ProdMng/>},
-            {path: "addadmin", element:<AddADMIN/>},
-            {path: "adminmanagement", element:<UserManagement/>},
-            {path: "editadmin", element:<EditADMIN/>},
-            {path: "gamedetail", element:<GameDetail/>}
-            
+            {path: "about-us", element:<Aboutus/>},
+            {path: "product-management", element:<ProdMng/>},
+            {path: "add-admin", element:<AddADMIN/>},
+            {path: "admin-management", element:<UserManagement/>},
+            {path: "edit-admin", element:<EditADMIN/>},
+            {path: "game-detail", element:<GameDetail/>},
+            {path: "payment-success", element: <PaymentSuccessful/>},
+            {path: "log-in", element: <LogIn/>}
         ]
     }
 ])

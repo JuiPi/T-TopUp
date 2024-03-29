@@ -4,12 +4,12 @@ import { useState } from "react";
 // import "./App.css";
 import React from "react";
 
-import Aboutus from "./Aboutus";
-import Homepage from "./Homepage";
-import ProdMng from "./ProdMng";
-import AddADMIN from "./AddADMIN";
-import UserManagement from "./UserManagement";
-import EditADMIN from "./EditADMIN";
+// import Aboutus from "./Aboutus";
+// import Homepage from "./Homepage";
+// import ProdMng from "./ProdMng";
+// import AddADMIN from "./AddADMIN";
+// import UserManagement from "./UserManagement";
+// import EditADMIN from "./EditADMIN";
 import { Outlet } from 'react-router-dom';
 
 
@@ -21,16 +21,6 @@ function App(){
   <Outlet/>
   </>
   );
-  // return (
-  //   <>
-  //     {/* <Homepage /> */}
-  //     {/* <Aboutus /> */}
-  //     {/* <ProdMng /> */}
-  //     {/* <UserManagement /> */}
-  //     {/* <AddADMIN /> */}
-  //     <EditADMIN/>
-  //   </>
-  // );
 }
 
 export default App;

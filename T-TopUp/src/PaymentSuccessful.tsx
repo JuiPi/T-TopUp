@@ -13,9 +13,8 @@ return(
         <div className="payment-icon">
             <img src={Success}></img>
         </div>
-        <div className="payment-text">
-            <h1>Payment Successful</h1>
-        </div>
+        
+        <h1>Payment Successful</h1>
         
         <button className="back">Back to Menu</button>
     </div>
