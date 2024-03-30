@@ -17,6 +17,7 @@
     display: flex;
     flex-direction: row;
     text-align: center;
+    align-items: center;
 
 }
 
@@ -26,6 +27,7 @@
     float: left;
     padding: 14px 16px;
     text-decoration: none;
+    font-weight: bold;
 }
 
 .logosize {
@@ -33,21 +35,23 @@
 }
 
 .search {
-    position: relative;
-    float: right;
+    position: absolute;
+    right: 0;
     margin: 7px;
-    display: block;
-    
 }
 
 .search input[type=text] {
-    position: absolute;
-    float: right;
-    padding: 6px;
+    border-radius: 50px;
+    width: 250px;
+    padding: 12.5px;
     border: none;
     font-size: 17px;
 }
-
-.search button {
-    
-}
+ .search img {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 5px;
+    width: 40px;
+    height: 40px;
+ }
