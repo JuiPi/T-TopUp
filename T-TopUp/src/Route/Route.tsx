@@ -9,6 +9,7 @@ import GameDetail from "../game_detail/game_detail"
 import PaymentSuccessful from "../PaymentSuccessful";
 import LogIn from "../LogIn";
 import App from "../App";
+import AdvSearch from "../AdvSearch";
 
 
 export const router = createBrowserRouter([
@@ -24,7 +25,8 @@ export const router = createBrowserRouter([
             {path: "edit-admin", element:<EditADMIN/>},
             {path: "game-detail", element:<GameDetail/>},
             {path: "payment-success", element: <PaymentSuccessful/>},
-            {path: "log-in", element: <LogIn/>}
+            {path: "log-in", element: <LogIn/>},
+            {path: "advanced-search", element: <AdvSearch/>}
         ]
     }
 ])

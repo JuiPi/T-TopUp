@@ -19,9 +19,10 @@ function NavBar() {
         <div className="search">
           <form action="#">
             <input type="text" placeholder="Search" name="search"></input>
-            {/* <button type="submit">Search</button> */}
           </form>
-          <img src={mag}></img>
+          <a href="advanced-search">
+            <img src={mag}></img>
+          </a>
         </div>
       </switch>
     </>
