@@ -29,5 +29,25 @@
 }
 
 .logosize {
-    width: 50px;
+    width: 60px;
+}
+
+.search {
+    position: relative;
+    float: right;
+    margin: 7px;
+    display: block;
+    
+}
+
+.search input[type=text] {
+    position: absolute;
+    float: right;
+    padding: 6px;
+    border: none;
+    font-size: 17px;
+}
+
+.search button {
+    
 }
