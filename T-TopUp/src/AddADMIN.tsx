@@ -1,6 +1,7 @@
 import Footer from "./Components/Footer";
 import NavBar from "./Components/NavBar";
 import Edit_Cover from "./assets/Misc/Edit_Cover.png";
+import BackButton from "./assets/Misc/Back Button.jpg"
 import "./AddADMIN.css";
 
 function AddADMIN() {
@@ -10,6 +11,12 @@ function AddADMIN() {
         <NavBar />
       </header>
 
+    <switch>
+      <a href="admin-management">
+        <img src={BackButton} className="Back" ></img>
+      </a>
+      </switch>  
+    
       <body>
         <div className="Body">
           <div className="UserManageFrame drop-shadow">
@@ -59,9 +66,11 @@ function AddADMIN() {
                 </div>
               </div>
 
-              <button type="submit" className="Submitbutton">
-                ADD
-              </button>
+              <a href="admin-management">
+                <button type="submit" className="Submitbutton">
+                  ADD
+                </button>
+              </a>
             </div>
           </div>
         </div>

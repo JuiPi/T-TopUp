@@ -13,7 +13,7 @@ function NavBar() {
           <img src={picture} alt="Logo" className="logosize"></img>
         </a>
         <a href="/">Home</a>
-        <a href="#">Games</a>
+        <a href="/">Games</a>
         <a href="admin-management">User Management</a>
         <a href="product-management">Product Management</a>
         <div className="search">

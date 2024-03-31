@@ -21,7 +21,7 @@ function Footer() {
 
         <div className="footer-text">
           <p>2024 Copyrights YuthPong co.</p>
-          <a href="about-us" className="about">About us</a>
+          <a href="about-us" className="hover:border-b border-white-500">About us</a>
         </div>
       </footer>
     </>

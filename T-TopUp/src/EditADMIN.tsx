@@ -1,6 +1,7 @@
 import Footer from "./Components/Footer";
 import NavBar from "./Components/NavBar";
 import Edit_Cover from "./assets/Misc/Edit_Cover.png";
+import BackButton from "./assets/Misc/Back Button.jpg"
 import "./EditADMIN.css";
 
 function EditADMIN() {
@@ -9,6 +10,12 @@ function EditADMIN() {
       <header>
         <NavBar />
       </header>
+
+      <switch>
+      <a href="admin-management">
+        <img src={BackButton} className="Back" ></img>
+      </a>
+      </switch>  
 
       <body>
         <div className="Body">
@@ -59,12 +66,14 @@ function EditADMIN() {
                 </div>
               </div>
 
-              <button type="submit" className="SubmitbuttonA">
-                SAVE
-              </button>
-              <button type="reset" className="SubmitbuttonB">
-                DELETE
-              </button>
+              <a href="admin-management">
+                <button type="submit" className="SubmitbuttonA">
+                  SAVE
+                </button>
+                <button type="reset" className="SubmitbuttonB">
+                  DELETE
+                </button>
+              </a>
             </div>
           </div>
         </div>

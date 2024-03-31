@@ -7,7 +7,8 @@ function UserManagement() {
             <NavBar />  
                       
             <div className="flex justify-end mr-48">
-                <button type="button" className="w-24 h-8 bg-green-500 text-white text-center font-semibold rounded-md mt-8">Add User</button> 
+
+                <a href="add-admin"><button type="button" className="w-24 h-8 bg-green-500 text-white text-center font-semibold rounded-md mt-8">Add User</button> </a>
             </div>
 
             <div className="text-center mt-8 text-2xl font-bold"> {/* Apply Tailwind CSS classes for center alignment */}
