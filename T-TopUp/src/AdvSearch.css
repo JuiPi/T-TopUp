@@ -58,6 +58,49 @@
 }
 
 .search-content input[type=checkbox] {
-    width: 65px;
+    width: 25px;
+    height: 25px;
+    margin-right: 8px;
+}
+
+.search-content label {
+    font-size: 20px;
+}
+
+/* .search-container button {
+    width: 285px;
     height: 65px;
+    font-size: 24px;
+    color: white;
+    background-color: #455b71;
+    align-content: center;
+    padding: 15px;
+    margin-right: 20px;
+    text-align: center;
+    justify-content: center;
+    margin: auto;
+} */
+
+.button-container button {
+    width: 285px;
+    height: 65px;
+    font-size: 24px;
+    align-content: center;
+    padding: 15px;
+    margin-right: 20px;
+    text-align: center;
+    justify-content: center;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.searchbutton {
+    color: white;
+    background-color: #455b71;
+    margin: auto;
+}
+
+.clearbutton {
+    color: black;
+    background-color: white;
 }
