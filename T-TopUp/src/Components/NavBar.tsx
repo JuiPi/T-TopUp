@@ -9,7 +9,7 @@ function NavBar() {
         <a href="log-in">Log in</a>
       </nav>
       <switch className="nav2">
-        <a href="Homepage">
+        <a href="/">
           <img src={picture} alt="Logo" className="logosize"></img>
         </a>
         <a href="/">Home</a>

@@ -26,14 +26,11 @@
     border-radius: 50%;
   }
   
-.footercon{
+.footer-text {
+    text-align: center;
     font-size: 18px;
-    font-weight: 400;
-    padding: 3px;
-    margin: auto;
-    color: #FFFFFF;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    color: white;
+    font-weight:500;
+    padding: 2px;
 }
     

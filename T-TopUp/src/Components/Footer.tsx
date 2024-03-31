@@ -19,8 +19,10 @@ function Footer() {
           </div>
         </div>
 
-        <p className="footercon">2024 Copyrights YuthPong co.</p>
-        <p className="footercon">About us</p>
+        <div className="footer-text">
+          <p>2024 Copyrights YuthPong co.</p>
+          <a href="about-us" className="about">About us</a>
+        </div>
       </footer>
     </>
   );
