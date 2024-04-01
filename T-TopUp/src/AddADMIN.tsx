@@ -11,8 +11,8 @@ function AddADMIN() {
         <NavBar />
       </header>
      
-  <div className="flex justify-start ml-24 mt-8" >
-    <a href="admin-management"><button type="button"><img src={BackButton}></img></button> </a>
+  <div className="flex justify-start ml-20 mt-8" >
+    <a href="admin-management"><button type="button"><img src={BackButton} className="h-8 w-auto"></img></button> </a>
   </div>
 
 
