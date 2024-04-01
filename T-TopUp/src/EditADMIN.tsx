@@ -11,11 +11,9 @@ function EditADMIN() {
         <NavBar />
       </header>
 
-      <switch>
-      <a href="admin-management">
-        <img src={BackButton} className="Back" ></img>
-      </a>
-      </switch>  
+  <div className="flex justify-start ml-24 mt-8" >
+    <a href="add-admin"><button type="button"><img src={BackButton}></img></button> </a>
+  </div>
 
       <body>
         <div className="Body">
@@ -66,14 +64,14 @@ function EditADMIN() {
                 </div>
               </div>
 
-              <a href="admin-management">
+              {/* <a href="admin-management"> */}
                 <button type="submit" className="SubmitbuttonA">
                   SAVE
                 </button>
                 <button type="reset" className="SubmitbuttonB">
                   DELETE
                 </button>
-              </a>
+              {/* </a> */}
             </div>
           </div>
         </div>

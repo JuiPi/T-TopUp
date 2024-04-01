@@ -10,13 +10,12 @@ function AddADMIN() {
       <header>
         <NavBar />
       </header>
+     
+  <div className="flex justify-start ml-24 mt-8" >
+    <a href="admin-management"><button type="button"><img src={BackButton}></img></button> </a>
+  </div>
 
-    <switch>
-      <a href="admin-management">
-        <img src={BackButton} className="Back" ></img>
-      </a>
-      </switch>  
-    
+
       <body>
         <div className="Body">
           <div className="UserManageFrame drop-shadow">

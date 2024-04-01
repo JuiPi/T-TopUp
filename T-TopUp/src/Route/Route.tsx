@@ -11,6 +11,7 @@ import LogIn from "../LogIn";
 import App from "../App";
 import AdvSearch from "../AdvSearch";
 import SearchResult from "../SearchResult";
+import DELETEADMIN from "../DELETEADMIN";
 
 
 export const router = createBrowserRouter([
@@ -28,7 +29,8 @@ export const router = createBrowserRouter([
             {path: "payment-success", element: <PaymentSuccessful/>},
             {path: "log-in", element: <LogIn/>},
             {path: "advanced-search", element: <AdvSearch/>},
-            {path: "search-result", element: <SearchResult/>}
+            {path: "search-result", element: <SearchResult/>},
+            {path: "Delete",element: <DELETEADMIN/>}
         ]
     }
 ])
