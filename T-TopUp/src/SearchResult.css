@@ -1,0 +1,27 @@
+.filter-content {
+    margin: 50px;
+    margin-left: 85px;
+    margin-right: 85px;
+    font-size:28px;
+}
+
+.filter-content h1 {
+    margin-bottom: 15px;
+}
+
+.filter-content hr {
+    border-top: 3px solid black;
+}
+
+.search-filter {
+    display: flex;
+    /* padding: 10px; */
+    
+}
+
+.search-filter div {
+    margin: 10px;
+    background-color: #D9D9D9;
+    color: black;
+    display: flex;
+}
