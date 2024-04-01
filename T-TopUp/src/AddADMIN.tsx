@@ -1,6 +1,7 @@
 import Footer from "./Components/Footer";
 import NavBar from "./Components/NavBar";
 import Edit_Cover from "./assets/Misc/Edit_Cover.png";
+import BackButton from "./assets/Misc/back.png"
 import "./AddADMIN.css";
 
 function AddADMIN() {
@@ -9,6 +10,11 @@ function AddADMIN() {
       <header>
         <NavBar />
       </header>
+     
+  <div className="flex justify-start ml-24 mt-8" >
+    <a href="admin-management"><button type="button"><img src={BackButton}></img></button> </a>
+  </div>
+
 
       <body>
         <div className="Body">
@@ -59,9 +65,11 @@ function AddADMIN() {
                 </div>
               </div>
 
-              <button type="submit" className="Submitbutton">
-                ADD
-              </button>
+              <a href="admin-management">
+                <button type="submit" className="Submitbutton">
+                  ADD
+                </button>
+              </a>
             </div>
           </div>
         </div>
