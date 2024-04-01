@@ -14,7 +14,7 @@ function Aboutus() {
         <NavBar />
       </header>
       {/*  */}
-    <body>
+    <body className="mb-20">
         <div>
           <p className="TeamMem">Our Team Members</p>
         </div>
