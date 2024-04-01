@@ -1,7 +1,7 @@
 import Footer from "./Components/Footer";
 import NavBar from "./Components/NavBar";
 import Edit_Cover from "./assets/Misc/Edit_Cover.png";
-import BackButton from "./assets/Misc/Back Button.jpg"
+import BackButton from "./assets/Misc/back.png"
 import "./EditADMIN.css";
 
 function EditADMIN() {
