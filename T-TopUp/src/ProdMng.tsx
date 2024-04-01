@@ -38,7 +38,7 @@ function ProdMng() {
               <img className="editIcon" src={edit}></img>
             </div>
             <div className="close">X</div>
-            <p>Fifa</p>
+            <p>FIFA 2019</p>
           </div>
 
           <div className="game">
