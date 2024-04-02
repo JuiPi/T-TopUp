@@ -24,8 +24,8 @@ function AddGame() {
                             <div className="game-desc">
                                 <h3>GAME NAME</h3>
                                     <p>
-                                        #
-                                    </p>
+                                    <input className="overflow-y-auto w-11/12 appearance-none bg-transparent border-green-400 text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" type="text" placeholder="Description">
+                                    </input></p>
                             </div>
                             <div className="game-attr">
                                 <p>Platform: #</p>

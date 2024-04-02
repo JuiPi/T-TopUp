@@ -12,14 +12,11 @@ import React from "react";
 // import EditADMIN from "./EditADMIN";
 import { Outlet } from 'react-router-dom';
 
-
-
-
-function App(){
-  
-  return(<>
-  <Outlet/>
-  </>
+function App() {
+  return (
+    <>
+      <Outlet/>
+    </>
   );
 }
 
