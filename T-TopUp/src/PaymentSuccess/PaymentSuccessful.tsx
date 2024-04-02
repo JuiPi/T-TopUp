@@ -1,6 +1,6 @@
-import NavBar from "./Components/NavBar";
-import Footer from "./Components/Footer";
-import Success from "./assets/Misc/Success.png"
+import NavBar from "../Components/NavBar";
+import Footer from "../Components/Footer";
+import Success from "../assets/Misc/Success.png"
 import './PaymentSuccessful.css'
 
 
@@ -16,7 +16,7 @@ return(
         
         <h1>Payment Successful</h1>
         
-        <button className="back">Back to Menu</button>
+        <button className="back"><a href="/">Back to Menu</a></button>
     </div>
     
     <Footer/>

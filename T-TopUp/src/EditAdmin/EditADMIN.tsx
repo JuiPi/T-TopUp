@@ -1,26 +1,25 @@
-import Footer from "./Components/Footer";
-import NavBar from "./Components/NavBar";
-import Edit_Cover from "./assets/Misc/Edit_Cover.png";
-import BackButton from "./assets/Misc/back.png"
-import "./AddADMIN.css";
+import Footer from "../Components/Footer";
+import NavBar from "../Components/NavBar";
+import Edit_Cover from "../assets/Misc/Edit_Cover.png";
+import BackButton from "../assets/Misc/back.png"
+import "./EditADMIN.css";
 
-function AddADMIN() {
+function EditADMIN() {
   return (
     <>
       <header>
         <NavBar />
       </header>
-     
+
   <div className="flex justify-start ml-20 mt-8" >
     <a href="admin-management"><button type="button"><img src={BackButton} className="h-8 w-auto"></img></button> </a>
   </div>
-
 
       <body>
         <div className="Body">
           <div className="UserManageFrame drop-shadow">
             <div className="UserPicAdj">
-              {/* ADD ADMIN IMAGE */}
+              {/* Edit ADMIN IMAGE */}
               <img className="UserPic" src={Edit_Cover}></img>
             </div>
 
@@ -28,12 +27,12 @@ function AddADMIN() {
               <div className="inputsRow">
                 <div className="inputGroup">
                   <label >Username</label>
-                    <input type="text"  className="Add" />
+                    <input type="text"  className="Edit" />
                 </div>
 
               <div className="inputGroup">
                 <label>First Name</label>
-                  <input type="text" className="Add" />
+                  <input type="text" className="Edit" />
               </div>
             </div>
 
@@ -41,12 +40,12 @@ function AddADMIN() {
                 <div className="inputsRow">
                   <div className="inputGroup">
                     <label >Email</label>
-                      <input type="text"  className="Add" />
+                      <input type="text"  className="Edit" />
                   </div>
                 
                   <div className="inputGroup">
                     <label>Last Name</label>
-                      <input type="text" className="Add" />
+                      <input type="text" className="Edit" />
                   </div>
                 </div>
               </div>
@@ -55,21 +54,24 @@ function AddADMIN() {
                 <div className="inputsRow">
                   <div className="inputGroup">
                     <label >Password</label>
-                      <input type="text"  className="Add" />
+                      <input type="text"  className="Edit" />
                   </div>
                 
                   <div className="inputGroup">
                     <label>Telephone</label>
-                      <input type="text"className="Add" />
+                      <input type="text"className="Edit" />
                   </div>
                 </div>
               </div>
 
-              <a href="admin-management">
-                <button type="submit" className="Submitbutton">
-                  ADD
+              {/* <a href="admin-management"> */}
+                <button type="submit" className="SubmitbuttonA">
+                  SAVE
                 </button>
-              </a>
+                <button type="reset" className="SubmitbuttonB">
+                  DELETE
+                </button>
+              {/* </a> */}
             </div>
           </div>
         </div>
@@ -80,4 +82,4 @@ function AddADMIN() {
   );
 }
 
-export default AddADMIN;
+export default EditADMIN;

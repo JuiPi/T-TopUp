@@ -1,11 +1,11 @@
-import NavBar from "./Components/NavBar";
-import Footer from "./Components/Footer";
-import back from "./assets/Misc/back.png";
-import val from "./assets/Game_icon/Val/val_icon.png";
+import NavBar from "../Components/NavBar";
+import Footer from "../Components/Footer";
+import back from "../assets/Misc/back.png";
+import val from "../assets/Game_icon/Val/val_icon.png";
 import "./GameDet.css";
-import credit from "./assets/Misc/credit.png";
-import mobile from "./assets/Misc/mobile.png";
-import pp from "./assets/Misc/pp.png";
+import credit from "../assets/Misc/credit.png";
+import mobile from "../assets/Misc/mobile.png";
+import pp from "../assets/Misc/pp.png";
 
 function GameDet() {
   return (
@@ -148,7 +148,7 @@ function GameDet() {
           </div>
 
           <button type="button" className="confirm">
-            Confirm
+            <a href="payment-success">Confirm</a>
           </button>
         </div>
       </body>
