@@ -1,27 +1,25 @@
 import { useState } from "react";
-import "./Components/Nav"
-import "./App.css";
-import Nav from "./Components/Nav";
+// import reactLogo from "./assets/react.svg";
+// import viteLogo from "/vite.svg";
+// import "./App.css";
+import React from "react";
 
-function App() {
-  //const [count, setCount] = useState(0);
+// import Aboutus from "./Aboutus";
+// import Homepage from "./Homepage";
+// import ProdMng from "./ProdMng";
+// import AddADMIN from "./AddADMIN";
+// import UserManagement from "./UserManagement";
+// import EditADMIN from "./EditADMIN";
+import { Outlet } from 'react-router-dom';
 
-<<<<<<< Updated upstream
-  return (
-    <>
-      <Nav/>
-      <h1 className=" text-center text-blue-500 text">Pran is an IDIOT SANDWICH</h1>
-=======
 
 
 
 function App(){
   
-  return(
-    <>
-      <Outlet/>
->>>>>>> Stashed changes
-    </>
+  return(<>
+  <Outlet/>
+  </>
   );
 }
 
