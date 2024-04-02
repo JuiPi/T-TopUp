@@ -3,8 +3,9 @@ import Footer from "./Components/Footer";
 import back from "./assets/Misc/back.png";
 import val from "./assets/Game_icon/Val/val_icon.png";
 import "./GameDet.css";
-import visa from "./assets/Misc/visa.png";
-import master from "./assets/Misc/master_card.jpg";
+import credit from "./assets/Misc/credit.png";
+import mobile from "./assets/Misc/mobile.png";
+import pp from "./assets/Misc/pp.png";
 
 function GameDet() {
   return (
@@ -120,31 +121,35 @@ function GameDet() {
 
               <div className="method-container">
                 <div className="method">
-                  <div className="method-img">
-                    {/* <img src={visa}></img> */}
-                    <img src={master}></img>
-                  </div>
+                  {/* <div className="method-img"> */}
+                  {/* <img src={visa}></img> */}
+                  <img src={credit}></img>
+                  {/* </div> */}
                   <p>VISA / Mastercard</p>
                 </div>
 
                 <div className="method">
-                  <div className="method-img">
-                    {/* <img src={visa}></img> */}
-                    <img src={master}></img>
-                  </div>
+                  {/* <div className="method-img"> */}
+                  {/* <img src={visa}></img> */}
+                  <img src={mobile}></img>
+                  {/* </div> */}
                   <p>Mobile Banking</p>
                 </div>
 
                 <div className="method">
-                  <div className="method-img">
-                    {/* <img src={visa}></img> */}
-                    <img src={master}></img>
-                    <p>Prompt Pay</p>
-                  </div>
+                  {/* <div className="method-img"> */}
+                  {/* <img src={visa}></img> */}
+                  <img src={pp}></img>
+                  {/* </div> */}
+                  <p>PromptPay</p>
                 </div>
               </div>
             </section>
           </div>
+
+          <button type="button" className="confirm">
+            Confirm
+          </button>
         </div>
       </body>
 
