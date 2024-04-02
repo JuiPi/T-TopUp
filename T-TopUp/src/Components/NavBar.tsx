@@ -12,10 +12,12 @@ function NavBar() {
         <a href="/">
           <img src={picture} alt="Logo" className="logosize"></img>
         </a>
-        <a href="/">Home</a>
-        <a href="/">Games</a>
-        <a href="admin-management">User Management</a>
-        <a href="product-management">Product Management</a>
+        <div className="nav-button">
+          <a href="/">Home</a>
+          <a href="/">Games</a>
+          <a href="admin-management">User Management</a>
+          <a href="product-management">Product Management</a>
+        </div>
         <div className="search">
           <form action="#">
             <input type="text" placeholder="Search" name="search"></input>

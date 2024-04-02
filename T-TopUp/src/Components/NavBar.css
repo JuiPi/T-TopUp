@@ -64,3 +64,9 @@
     width: 40px;
     height: 40px;
  }
+
+ .nav-button a:hover {
+    color: #5483B3;
+    background-color: white;
+    transition: 300ms;
+ }
