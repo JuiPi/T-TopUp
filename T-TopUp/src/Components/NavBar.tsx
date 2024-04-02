@@ -14,7 +14,7 @@ function NavBar() {
         </a>
         <div className="nav-button">
           <a href="/">Home</a>
-          <a href="/">Games</a>
+          <a href="#game-zone">Games</a>
           <a href="admin-management">User Management</a>
           <a href="product-management">Product Management</a>
         </div>
