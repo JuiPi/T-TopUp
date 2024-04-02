@@ -1,7 +1,7 @@
-import NavBar from "./Components/NavBar";
-import Footer from "./Components/Footer";
+import NavBar from "../Components/NavBar";
+import Footer from "../Components/Footer";
 import "./LogIn.css"
-import icon from "./assets/Misc/admin.png"
+import icon from "../assets/Misc/admin.png"
 
 function LogIn() {
     return (<>

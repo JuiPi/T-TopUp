@@ -1,20 +1,18 @@
 import { createBrowserRouter } from "react-router-dom";
-import Aboutus from "../Aboutus";
-import Homepage from "../Homepage";
-import ProdMng from "../ProdMng";
-import AddADMIN from "../AddADMIN";
-import UserManagement from "../UserManagement";
-import EditADMIN from "../EditADMIN";
+import Aboutus from "../Aboutus/Aboutus";
+import Homepage from "../Homepage/Homepage";
+import ProdMng from "../ProdMng/ProdMng";
+import AddADMIN from "../AddAdmin/AddADMIN";
+import UserManagement from "../UserManagement/UserManagement";
+import EditADMIN from "../EditAdmin/EditADMIN";
 // import GameDetail from "../game_detail/game_detail";
-import PaymentSuccessful from "../PaymentSuccessful";
-import LogIn from "../LogIn";
+import PaymentSuccessful from "../PaymentSuccess/PaymentSuccessful";
+import LogIn from "../Login/LogIn";
 import App from "../App";
-import AdvSearch from "../AdvSearch";
-import SearchResult from "../SearchResult";
-import DELETEADMIN from "../DELETEADMIN";
-import GameDet from "../GameDet";
-import AddItem from "../AddGame";
-import AddGame from "../AddGame";
+import AdvSearch from "../AdvSearch/AdvSearch";
+import SearchResult from "../SearchResult/SearchResult";
+import DELETEADMIN from "../DeleteAdmin/DELETEADMIN";
+import GameDet from "../GameDet/GameDet";
 
 export const router = createBrowserRouter([
   {
@@ -33,7 +31,6 @@ export const router = createBrowserRouter([
       { path: "advanced-search", element: <AdvSearch /> },
       { path: "search-result", element: <SearchResult /> },
       { path: "delete-admin", element: <DELETEADMIN /> },
-      { path: "add-game", element: <AddGame /> },
     ],
   },
 ]);
