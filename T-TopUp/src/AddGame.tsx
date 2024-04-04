@@ -3,7 +3,7 @@ import Footer from "./Components/Footer";
 import "./GameDet.css";
 
 import back from "./assets/Misc/back.png";
-import val from "./assets/Game_icon/Val/val_icon.png";
+// import val from "./assets/Game_icon/Val/val_icon.png";
 
 function AddGame() {
     return (
@@ -18,25 +18,58 @@ function AddGame() {
                 <main className="layout">
 
                     <section>
+
                         <div className="game-detail">
+
                             {/* {<img src={val}></img>} */}
-                            <div className="w-64 h-64 bg-gray-300 rounded-2xl"></div>
+                            <div className="w-64 h-64 bg-gray-300 rounded-2xl">
+                            </div>
+                            {/* <input type="file"></input> */}
+
                             <div className="game-desc">
-                                <h3>GAME NAME</h3>
+                                <input
+                                    className="w-11/12 text-4xl font-bold ml-3 mb-2 border-0"
+                                    maxLength={20}
+                                    placeholder="Game Name"
+                                >
+                                </input>
                                     <p>
-                                    <input className="overflow-y-auto w-11/12 appearance-none bg-transparent border-green-400 text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" type="text" placeholder="Description">
-                                    </input></p>
+                                        <textarea
+                                            rows={7}
+                                            className="w-full bg-transparent"
+                                            placeholder="Description"
+                                        >
+                                        </textarea>
+                                    </p>
                             </div>
-                            <div className="game-attr">
-                                <p>Platform: #</p>
-                                <p>Genre: #</p>
-                                <p>Publisher: #</p>
+
+                            <div className="game-attr -mt-1.5">
+                                <p>Platform: 
+                                    <input className="w-44 bg-transparent border-0"
+                                        placeholder="Input"
+                                    >
+                                    </input>
+                                </p>
+                                <p>Genre:
+                                    <input className="w-48 bg-transparent border-0"
+                                        placeholder="Input"
+                                    >
+                                    </input>
+                                </p>
+                                <p>Publisher: 
+                                    <input className="w-40 bg-transparent border-0"
+                                        placeholder="Input"
+                                    >
+                                    </input>
+                                </p>
                             </div>
+
                         </div>
+
                     </section>
                     
-                    
                     <div className="detail">
+
                         <section className="detail">
                             <div className="package">
                             <h6>Packages</h6>
@@ -47,8 +80,19 @@ function AddGame() {
                                 </div>
                             </div>    
                         </section>
-                    </div>
                     
+                        <section className="detail">
+                            <div className="package">
+                            <h6>Discount Code</h6>
+                                <div className="package-box">
+                                    <div className="box">
+                                        <p className="font-medium text-6xl -mt-4">+</p>
+                                    </div>           
+                                </div>
+                            </div>    
+                        </section>
+
+                    </div>
 
                 </main>
 
