@@ -74,9 +74,13 @@ function AddGame() {
                             <div className="package">
                             <h6>Packages</h6>
                                 <div className="package-box">
+                                    
                                     <div className="box">
-                                        <p className="font-medium text-6xl -mt-4">+</p>
-                                    </div>           
+                                        <button className="w-full h-full rounded-2xl font-medium text-6xl text-center">
+                                            <p style={{transform: 'translate(0px, -5px)'}}>+</p>
+                                        </button>
+                                    </div> 
+                                              
                                 </div>
                             </div>    
                         </section>
@@ -85,12 +89,31 @@ function AddGame() {
                             <div className="package">
                             <h6>Discount Code</h6>
                                 <div className="package-box">
+
                                     <div className="box">
-                                        <p className="font-medium text-6xl -mt-4">+</p>
-                                    </div>           
+                                        <button className="w-full h-full rounded-2xl font-medium text-6xl text-center">
+                                            <p style={{transform: 'translate(0px, -5px)'}}>+</p>
+                                        </button>
+                                    </div>     
+
                                 </div>
                             </div>    
                         </section>
+
+                        <div className="flex justify-end">
+                            <button
+                                type="button"
+                                className="w-32 h-11 bg-green-500 text-lg text-white text-center font-semibold rounded-md"
+                            >
+                            Save
+                            </button>
+                            <button
+                                type="button"
+                                className="w-32 h-11 bg-gray-300 text-lg text-black text-center font-semibold rounded-md ml-7"
+                            >
+                            Cancel
+                            </button>
+                        </div>
 
                     </div>
 
