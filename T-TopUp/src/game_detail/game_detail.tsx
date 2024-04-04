@@ -55,18 +55,34 @@ const GameDetail = (props: Props) => {
                         Your Email
                     </span>
                 
-                    <input type="email" name="email" className="mt-1 mx-10 mb-5 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-25 h- rounded-md sm:text-sm focus:ring-1" placeholder="Insert your email" />
+                    <input type="email" name="email" className="mt-1 mx-10 mb-5 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-25 rounded-md sm:text-sm focus:ring-1" placeholder="Insert your email" />
                     
                     {/* <h5 className='pl-12 pt-4 font-bold text-2xl'>Your Email</h5> */}
                 </div>  
-                <div className='pb-3 section flex flex-row w-full h-15 gap-4 justify-between bg-slate-300 rounded-lg'>
-                    <h5 className='pl-12 pt-4 font-bold text-2xl'>Your Game ID / Name</h5>
+                <div className='pb-3 section flex flex-col w-full h-15 gap-4 justify-between bg-slate-300 rounded-lg'>
+                    <span className="after:content-['*'] after:ml-0.5 after:text-red-500 pl-12 pt-4 font-bold text-2xl">
+                        Your Game ID / Name
+                    </span>
+                
+                    <input type="text" name="username" className="mt-1 mx-10 mb-5 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-25 rounded-md sm:text-sm focus:ring-1" placeholder="Insert your game ID or Name" />
+
+                    {/* <h5 className='pl-12 pt-4 font-bold text-2xl'>Your Game ID / Name</h5> */}
                 </div>
-                <div className='pb-3 section flex flex-row w-full h-15 gap-4 justify-between bg-slate-300 rounded-lg'>
-                    <h5 className='pl-12 pt-4 font-bold text-2xl'>Discount and Coupon</h5>
+                <div className='pb-3 section flex flex-col w-full h-15 gap-4 justify-between bg-slate-300 rounded-lg'>
+                    <span className="pl-12 pt-4 font-bold text-2xl">
+                        Discount and Coupon
+                    </span>
+                
+                    <input type="text" name="username" className="mt-1 mx-10 mb-5 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-25 rounded-md sm:text-sm focus:ring-1" placeholder="Insert discount or coupon code (If any)" />
+                    {/* <h5 className='pl-12 pt-4 font-bold text-2xl'>Discount and Coupon</h5> */}
                 </div>
-                <div className='pb-3 section flex flex-row w-full h-15 gap-4 justify-between bg-slate-300 rounded-lg'>
-                    <h5 className='pl-12 pt-4 font-bold text-2xl'>Payment</h5>
+                <div className='pb-3 section flex flex-col w-full h-15 gap-4 justify-between bg-slate-300 rounded-lg'>
+                    <span className="pl-12 pt-4 font-bold text-2xl">
+                        Payment
+                    </span>
+                    <div className='flex flex-row'>
+
+                    </div>
                 </div>
 
             </div>
