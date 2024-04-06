@@ -1,8 +1,8 @@
-import NavBar from "./Components/NavBar";
-import Footer from "./Components/Footer";
-import "./GameDet.css";
+import NavBar from "../Components/NavBar";
+import Footer from "../Components/Footer";
+import "../GameDet/GameDet.css";
 
-import back from "./assets/Misc/back.png";
+import back from "../assets/Misc/back.png";
 // import val from "./assets/Game_icon/Val/val_icon.png";
 
 function AddGame() {
