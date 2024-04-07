@@ -6,7 +6,7 @@ function UserManagement() {
         <>
             <body>
 
-                <header><NavBar /></header>
+                <header><NavBar/></header>
 
                 <div className="flex justify-end mr-48">
                     <a href="add-admin">
@@ -80,7 +80,7 @@ function UserManagement() {
                     </tbody>
                 </table>
 
-                <footer><Footer /></footer>
+                <footer><Footer/></footer>
                 
             </body>
         </>
