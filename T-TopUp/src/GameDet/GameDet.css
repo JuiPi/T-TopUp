@@ -7,7 +7,7 @@
     margin: auto;
 }
 
-.frame {
+/* .frame {
     width: 256px;
     height: 256px;
     border-radius: 16px;
@@ -19,7 +19,7 @@
     max-height: 100%;
     border-radius: 16px;
     background-color: #4eb345;
-}
+} */
 
 #back-img {
     height: 42.5px;
@@ -28,6 +28,8 @@
     margin: -60px 0 0 60px;
 }
 
+
+/* Game detail/description */
 .game-detail {
     margin: 90px auto 0;
     /* width: 1200px; */
@@ -79,6 +81,7 @@
     color: white;
 }
 
+/* Input detail */
 .detail {
     margin: 50px 0;
 }
@@ -96,6 +99,11 @@
     margin-bottom: 15px;
 }
 
+input {
+    box-shadow: 0px 2px 5px #454545;
+}
+
+/* Package */
 .package-box {
     display: flex;
     flex-direction: row;
@@ -103,16 +111,35 @@
 }
 
 .box{ 
-    display: flex;
-    flex-direction: column;
-    width: 250px;
-    height: 100px;
     background-color: white;
     margin: 10px 15px;
-    text-align: center;
-    justify-content: center;
-    font-weight: 600;
     border-radius: 15px;
+}
+
+.box input[type=radio] {
+    position: absolute;
+    /* margin: 0; */
+    width: 250px;
+    height: 100px;
+    opacity: 0;
+}
+
+.box-detail {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    border-radius: 15px;
+    font-weight: 600;
+    width:250px;
+    height:100px;
+}
+
+input:checked + .box-detail {
+    background-color: #5483B3;
+    color: white;
+    outline: 2px solid white;
+    box-shadow: 0px 2px 10px 5px #5483B3;
 }
 
 .coin {
@@ -123,6 +150,7 @@
     font-size: 20px;
 }
 
+/* Input Textbox */
 .detail input{
     border: 0;
     height: 50px;
@@ -130,26 +158,52 @@
     padding: 10px;
 }
 
+/* Payment Method */
 .method-container {
     display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 .method {
     width: 350px;
     height: 300px;
     margin: 0 10px;
-    text-align: center;
     font-size: 20px;
     font-weight: 500;
 }
 
-.method img{
-    /* display: flex; */
+.method input[type=radio] {
+    position: absolute;
+    height: 250px;
+    width: 350px;
+    /* margin: 0; */
+    opacity: 0;
+}
+
+.method img {
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
     background-color: white;
     height: 250px;
     margin-bottom: 15px;
 }
 
+input:checked + .method-icon img {
+    /* background-color: #4eb345; */
+    outline: 2px solid #456789;
+    box-shadow: 0px 5px 10px 5px #5483B3;
+    /* outline-style: solid;
+    outline-color: red; */
+}
+
+.method-icon {
+    text-align: center;
+}
+
+/* Confirm Button */
 .confirm {
     display: block;
     width: 210px;
