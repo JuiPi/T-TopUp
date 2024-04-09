@@ -33,7 +33,7 @@ function GameDet() {
             <img src={val}></img>
 
             <div className="game-desc">
-              {gameList.map((val,key)=>{
+              {/* {gameList.map((val,key)=>{
                 return(
                   <div>
                     <h3>
@@ -44,7 +44,7 @@ function GameDet() {
                     </p>
                   </div>
                 )
-              })}
+              })} */}
 
               <h3>GAME NAME</h3>
               <p>
