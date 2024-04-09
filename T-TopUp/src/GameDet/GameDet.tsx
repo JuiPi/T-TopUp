@@ -72,50 +72,79 @@ function GameDet() {
             <section className="package">
               <h6>Packages</h6>
 
+              
               <div className="package-box">
                 <div className="box">
-                  <p className="coin"># Coins</p>
-                  <p className="thb"># THB</p>
+                  <input name="package" type="radio"></input>
+                  <div className="box-detail">
+                    <p className="coin"># Coins</p>
+                    <p className="thb"># THB</p>
+                    <label></label>
+                  </div>
                 </div>
 
                 <div className="box">
-                  <p className="coin"># Coins</p>
-                  <p className="thb"># THB</p>
+                  <input name="package" type="radio"></input>
+                  <div className="box-detail">
+                    <p className="coin"># Coins</p>
+                    <p className="thb"># THB</p>
+                  </div>
                 </div>
 
                 <div className="box">
-                  <p className="coin"># Coins</p>
-                  <p className="thb"># THB</p>
+                  <input name="package" type="radio"></input>
+                  <div className="box-detail">
+                    <p className="coin"># Coins</p>
+                    <p className="thb"># THB</p>
+                  </div>  
                 </div>
 
                 <div className="box">
-                  <p className="coin"># Coins</p>
-                  <p className="thb"># THB</p>
+                  <input name="package" type="radio"></input>
+                  <div className="box-detail">
+                    <p className="coin"># Coins</p>
+                    <p className="thb"># THB</p>
+                  </div>
                 </div>
 
                 <div className="box">
-                  <p className="coin"># Coins</p>
-                  <p className="thb"># THB</p>
+                  <input name="package" type="radio"></input>
+                  <div className="box-detail">
+                    <p className="coin"># Coins</p>
+                    <p className="thb"># THB</p>
+                  </div>
                 </div>
 
                 <div className="box">
-                  <p className="coin"># Coins</p>
-                  <p className="thb"># THB</p>
+                  <input name="package" type="radio"></input>
+                  <div className="box-detail">
+                    <p className="coin"># Coins</p>
+                    <p className="thb"># THB</p>
+                  </div>
                 </div>
 
                 <div className="box">
-                  <p className="coin"># Coins</p>
-                  <p className="thb"># THB</p>
+                  <input name="package" type="radio"></input>
+                  <div className="box-detail">
+                    <p className="coin"># Coins</p>
+                    <p className="thb"># THB</p>
+                  </div>
                 </div>
 
                 <div className="box">
-                  <p className="coin"># Coins</p>
-                  <p className="thb"># THB</p>
+                  <input name="package" type="radio"></input>
+                  <div className="box-detail">
+                    <p className="coin"># Coins</p>
+                    <p className="thb"># THB</p>
+                  </div>
                 </div>
 
                 <div className="box">
-                  <p className="coin"># Coins</p>
-                  <p className="thb"># THB</p>
+                  <input name="package" type="radio"></input>  
+                  <div className="box-detail">
+                    <p className="coin"># Coins</p>
+                    <p className="thb"># THB</p>
+                  </div>
                 </div>
               </div>
             </section>
@@ -145,29 +174,49 @@ function GameDet() {
               <h6>Payment</h6>
 
               <div className="method-container">
-                <div className="method">
-                  {/* <div className="method-img"> */}
-                  {/* <img src={visa}></img> */}
+              
+
+                {/* IMG only */}
+                {/* <div className="method">
                   <img src={credit}></img>
-                  {/* </div> */}
                   <p>VISA / Mastercard</p>
                 </div>
 
                 <div className="method">
-                  {/* <div className="method-img"> */}
-                  {/* <img src={visa}></img> */}
                   <img src={mobile}></img>
-                  {/* </div> */}
                   <p>Mobile Banking</p>
                 </div>
 
                 <div className="method">
-                  {/* <div className="method-img"> */}
-                  {/* <img src={visa}></img> */}
                   <img src={pp}></img>
-                  {/* </div> */}
                   <p>PromptPay</p>
+                </div> */}
+
+                {/* Radio button */}
+                <div className="method">
+                  <input id="credit" name="payment" type="radio"></input>
+                  <div className="method-icon">
+                    <img src={credit}></img>
+                    <label for="credit">VISA / Mastercard</label>
+                  </div>
                 </div>
+
+                <div className="method">
+                  <input id="mobile" name="payment" type="radio"></input>
+                  <div className="method-icon">
+                    <img src={mobile}></img>
+                    <label for="mobile">Mobile Banking</label>
+                  </div>
+                </div>
+
+                <div className="method">
+                  <input id="pp" name="payment" type="radio"></input>
+                  <div className="method-icon">
+                    <img src={pp}></img>
+                    <label for="pp">PromptPay</label>
+                  </div>
+                </div>
+
               </div>
             </section>
           </div>

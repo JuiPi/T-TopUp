@@ -13,6 +13,7 @@ import AdvSearch from "../AdvSearch/AdvSearch";
 import SearchResult from "../SearchResult/SearchResult";
 import DELETEADMIN from "../DeleteAdmin/DELETEADMIN";
 import GameDet from "../GameDet/GameDet";
+import AddGame from "../AddGame/AddGame";
 
 export const router = createBrowserRouter([
   {
@@ -31,6 +32,8 @@ export const router = createBrowserRouter([
       { path: "advanced-search", element: <AdvSearch /> },
       { path: "search-result", element: <SearchResult /> },
       { path: "delete-admin", element: <DELETEADMIN /> },
+      { path: "add-game", element: <AddGame /> },
+
     ],
   },
 ]);

@@ -50,11 +50,17 @@
     margin-bottom: 20px;
 }
 
-.search-content input[type=text]  {
+/* .search-content input[type=text]  {
     border: none;
     width: 900px;
     height: 65px;
     border-radius: 0px;
+} */
+
+.search-content select {
+    width: 900px;
+    height: 65px;
+    font-size: 20px;
 }
 
 .search-content input[type=checkbox] {

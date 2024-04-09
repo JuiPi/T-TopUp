@@ -48,48 +48,58 @@ function Homepage() {
             </section>
             <section className="gamename">FIFA 2019</section>
           </article>
+
           <article className="gamecolumn">
             <section className="imggame">
               <img src={ow} className="gameicon"></img>
             </section>
             <section className="gamename">Overwatch</section>
           </article>
+
           <article className="gamecolumn">
             <section className="imggame">
               <img src={lol} className="gameicon"></img>
             </section>
             <section className="gamename">Leagues of Legend</section>
           </article>
+
           <article className="gamecolumn">
             <section className="imggame">
               <img src={rov} className="gameicon"></img>
             </section>
             <section className="gamename">Arena of Valor</section>
           </article>
+
           <article className="gamecolumn">
             <section className="imggame">
               <img src={tf2} className="gameicon"></img>
             </section>
             <section className="gamename">Team Fortress 2</section>
           </article>
+
           <article className="gamecolumn">
             <section className="imggame">
               <img src={tft} className="gameicon"></img>
             </section>
             <section className="gamename">Teamfight Tactics</section>
           </article>
+
           <article className="gamecolumn">
             <section className="imggame">
-              <img src={val} className="gameicon"></img>
+              <a href="/game-detail">
+                <img src={val} className="gameicon"></img>
+              </a>
             </section>
             <section className="gamename">Valorant</section>
           </article>
+
           <article className="gamecolumn">
             <section className="imggame">
               <img src={rb} className="gameicon"></img>
             </section>
             <section className="gamename">Roblox</section>
           </article>
+
         </article>
       </div>
       <Footer />
