@@ -7,20 +7,45 @@ import credit from "../assets/Misc/credit.png";
 import mobile from "../assets/Misc/mobile.png";
 import pp from "../assets/Misc/pp.png";
 
+import Axios from "axios";
+import { useState } from "react";
+
 function GameDet() {
+
+  const [gameList, setGameList] = useState([]);
+
+  const getGames = () =>{
+    Axios.get('http://localhost:8000/gamedatabase').then((response)=>{
+      setGameList((response.data));
+    })
+  }
+
   return (
     <>
       <header>
         <NavBar />
       </header>
 
-      <body>
+      <body onLoad={getGames}>
         <img src={back} id="back-img"></img>
         <div className="layout">
           <div className="game-detail">
             <img src={val}></img>
 
             <div className="game-desc">
+              {/* {gameList.map((val,key)=>{
+                return(
+                  <div>
+                    <h3>
+                      {val.gname}
+                    </h3>
+                    <p>
+                      {val.gdesc}
+                    </p>
+                  </div>
+                )
+              })} */}
+
               <h3>GAME NAME</h3>
               <p>
                 this is a description. this is a description. this is a
