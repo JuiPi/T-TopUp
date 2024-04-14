@@ -13,13 +13,36 @@ import tft from "../assets/Game_icon/TFT/tft_icon.png";
 import val from "../assets/Game_icon/Val/val_icon.png";
 import rb from "../assets/Game_icon/Roblox/rob_icon.png";
 
+import Axios from "axios";
+import { useEffect, useState } from "react";
+
+
+
 function Homepage() {
+
+  const [gameList, setGameList] = useState([]);
+
+  const getGames = () => {
+    Axios.get('http://localhost:8000/gamedatabase')
+      .then((response) => {
+        setGameList(response.data);
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.error('Error fetching games:', error);
+      });
+  };
+
+  useEffect(() => {
+    getGames();
+  }, []); // Call getGames() once when component mounts
+
   return (
     <>
       <header>
         <NavBar />
       </header>
-      <body>
+      <body >
         <article>
           <div className="slider">
             <div className="slides">
@@ -39,9 +62,25 @@ function Homepage() {
       </body>
       <br></br>
 
-      <div id="game-zone">
+      <div id="game-zone" >
         <p className="text">All Games</p>
+
+
         <article className="gamecontainer">
+          {gameList.map((val,key)=>{
+            return(
+              <article className="gamecolumn">
+                <section className="imggame">
+                  <img src={val.icon} className="gameicon"></img>
+                </section>
+                <a className="gamename" href={`/game-detail/${val.gname}`}>{val.gname}</a>
+              </article>
+            )
+          })}
+
+        </article>
+
+        {/* <article className="gamecontainer">
           <article className="gamecolumn">
             <section className="imggame">
               <img src={ff} className="gameicon"></img>
@@ -100,7 +139,7 @@ function Homepage() {
             <section className="gamename">Roblox</section>
           </article>
 
-        </article>
+        </article> */}
       </div>
       <Footer />
     </>

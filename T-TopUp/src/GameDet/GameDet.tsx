@@ -8,17 +8,46 @@ import mobile from "../assets/Misc/mobile.png";
 import pp from "../assets/Misc/pp.png";
 
 import Axios from "axios";
-import { useState } from "react";
+import { useEffect,useState } from "react";
+import { useParams } from "react-router-dom";
 
 function GameDet() {
 
-  const [gameList, setGameList] = useState([]);
+  const gameName = useParams();
+  // console.log(gameName.gameName);
 
-  const getGames = () =>{
-    Axios.get('http://localhost:8000/gamedatabase').then((response)=>{
-      setGameList((response.data));
-    })
-  }
+  // console.log(`http://localhost:8000/game/${gameName}`)
+
+  const [game, setGame] = useState([]);
+
+  const [packages, setPackages] = useState([]);
+
+  const getGame = () => {
+    Axios.get(`http://localhost:8000/game/${gameName.gameName}`)
+      .then((response) => {
+        setGame(response.data);
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.error('Error fetching game:', error);
+      });
+  };
+
+  const getPackages = () => {
+    Axios.get(`http://localhost:8000/package/${gameName.gameName}`)
+      .then((response) => {
+        setPackages(response.data);
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.error('Error fetching packages:', error);
+      });
+  };
+
+  useEffect(() => {
+    getGame();
+    getPackages();
+  }, []); // Call getGames() once when component mounts
 
   return (
     <>
@@ -26,25 +55,31 @@ function GameDet() {
         <NavBar />
       </header>
 
-      <body onLoad={getGames}>
+      <body>
         <img src={back} id="back-img"></img>
+
         <div className="layout">
-          <div className="game-detail">
+          {game.map((val,key)=>{
+              return(
+                <div className="game-detail">
+                  <img src={val.icon} alt="" />
+                  <div className="game-desc">
+                    <h3>{val.gname}</h3>
+                    <p>{val.gdesc}</p>
+
+                  </div>
+                  <div className="game-attr">
+                    <p>Platform: #{val.platform}</p>
+                    <p>Genre: #{val.genre}</p>
+                    <p>Publisher: #{val.publisher}</p>
+                  </div>
+                </div>
+              )
+            })}
+          {/* <div className="game-detail">
             <img src={val}></img>
 
             <div className="game-desc">
-              {/* {gameList.map((val,key)=>{
-                return(
-                  <div>
-                    <h3>
-                      {val.gname}
-                    </h3>
-                    <p>
-                      {val.gdesc}
-                    </p>
-                  </div>
-                )
-              })} */}
 
               <h3>GAME NAME</h3>
               <p>
@@ -66,86 +101,26 @@ function GameDet() {
               <p>Genre: #</p>
               <p>Publisher: #</p>
             </div>
-          </div>
+          </div> */}
 
           <div className="detail">
             <section className="package">
               <h6>Packages</h6>
 
-              
               <div className="package-box">
-                <div className="box">
-                  <input name="package" type="radio"></input>
-                  <div className="box-detail">
-                    <p className="coin"># Coins</p>
-                    <p className="thb"># THB</p>
-                    <label></label>
-                  </div>
-                </div>
+                {packages.map((val,key)=>{
+                return(
+                      <div className="box">
+                        <input name="package" type="radio"></input>
+                        <div className="box-detail">
+                          <p className="coin">{val.point} {val.unit}</p>
+                          <p className="thb">{val.price} THB</p>
+                          <label></label>
+                        </div>
+                      </div>
+                )
+                })}
 
-                <div className="box">
-                  <input name="package" type="radio"></input>
-                  <div className="box-detail">
-                    <p className="coin"># Coins</p>
-                    <p className="thb"># THB</p>
-                  </div>
-                </div>
-
-                <div className="box">
-                  <input name="package" type="radio"></input>
-                  <div className="box-detail">
-                    <p className="coin"># Coins</p>
-                    <p className="thb"># THB</p>
-                  </div>  
-                </div>
-
-                <div className="box">
-                  <input name="package" type="radio"></input>
-                  <div className="box-detail">
-                    <p className="coin"># Coins</p>
-                    <p className="thb"># THB</p>
-                  </div>
-                </div>
-
-                <div className="box">
-                  <input name="package" type="radio"></input>
-                  <div className="box-detail">
-                    <p className="coin"># Coins</p>
-                    <p className="thb"># THB</p>
-                  </div>
-                </div>
-
-                <div className="box">
-                  <input name="package" type="radio"></input>
-                  <div className="box-detail">
-                    <p className="coin"># Coins</p>
-                    <p className="thb"># THB</p>
-                  </div>
-                </div>
-
-                <div className="box">
-                  <input name="package" type="radio"></input>
-                  <div className="box-detail">
-                    <p className="coin"># Coins</p>
-                    <p className="thb"># THB</p>
-                  </div>
-                </div>
-
-                <div className="box">
-                  <input name="package" type="radio"></input>
-                  <div className="box-detail">
-                    <p className="coin"># Coins</p>
-                    <p className="thb"># THB</p>
-                  </div>
-                </div>
-
-                <div className="box">
-                  <input name="package" type="radio"></input>  
-                  <div className="box-detail">
-                    <p className="coin"># Coins</p>
-                    <p className="thb"># THB</p>
-                  </div>
-                </div>
               </div>
             </section>
 
