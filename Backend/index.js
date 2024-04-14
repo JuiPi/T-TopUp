@@ -37,6 +37,30 @@ app.get('/gamedatabase',(req,res)=>{
     })
 })
 
+app.get('/game/:name',(req,res)=>{
+    game_name = req.params.name;
+    
+    if (!game_name) {
+        return res.status(400).send({ error: true, message: 'Please provide student id.' });
+    }
+    connection.query('SELECT * FROM game where gname=?', game_name, function (error, results) {
+    if (error) throw error;
+        return res.send(results);
+    });
+})
+
+app.get('/package/:name',(req,res)=>{
+    game_name = req.params.name;
+    
+    if (!game_name) {
+        return res.status(400).send({ error: true, message: 'Please provide student id.' });
+    }
+    connection.query('SELECT * FROM package where gname=?', game_name, function (error, results) {
+    if (error) throw error;
+        return res.send(results);
+    });
+})
+
 app.listen(process.env.PORT,()=>{
     console.log(`Server listening on port: ${process.env.PORT}`)
 })
