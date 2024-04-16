@@ -37,6 +37,17 @@ app.get('/gamedatabase',(req,res)=>{
     })
 })
 
+app.get('/admindatabase',(req,res)=>{
+    connection.query(`select * from admin`,(error, results)=>{
+        if(error) {throw error
+
+        }else{
+            console.log(`${results.length} rows returned Founded`)
+            return res.send(results);
+        }
+    })
+})
+
 app.get('/game/:name',(req,res)=>{
     game_name = req.params.name;
     

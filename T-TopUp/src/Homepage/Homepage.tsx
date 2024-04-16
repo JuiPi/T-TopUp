@@ -15,6 +15,7 @@ import rb from "../assets/Game_icon/Roblox/rob_icon.png";
 
 import Axios from "axios";
 import { useEffect, useState } from "react";
+import { useLocation } from 'react-router-dom';
 
 
 
@@ -36,6 +37,8 @@ function Homepage() {
   useEffect(() => {
     getGames();
   }, []); // Call getGames() once when component mounts
+
+  const location = useLocation();
 
   return (
     <>
@@ -71,7 +74,9 @@ function Homepage() {
             return(
               <article className="gamecolumn">
                 <section className="imggame">
-                  <img src={val.icon} className="gameicon"></img>
+                  <a href={`/game-detail/${val.gname}`}>
+                    <img src={val.icon} className="gameicon"></img>
+                  </a>
                 </section>
                 <a className="gamename" href={`/game-detail/${val.gname}`}>{val.gname}</a>
               </article>

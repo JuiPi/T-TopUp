@@ -12,7 +12,28 @@ import addg from "../assets/Misc/add_game.png";
 import edit from "../assets/Misc/Edit_Cover.png";
 import "./ProdMng.css";
 
+import Axios from "axios";
+import { useEffect, useState } from "react";
+
 function ProdMng() {
+
+  const [gameList, setGameList] = useState([]);
+
+  const getGames = () => {
+    Axios.get('http://localhost:8000/gamedatabase')
+      .then((response) => {
+        setGameList(response.data);
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.error('Error fetching games:', error);
+      });
+  };
+
+  useEffect(() => {
+    getGames();
+  }, []); // Call getGames() once when component mounts
+
   return (
     <>
       <header>
@@ -32,7 +53,20 @@ function ProdMng() {
             <p>Add Game</p>
           </div>
 
-          <div className="game">
+          {gameList.map((val,key)=>{
+            return(
+              <div className="game" key={key}>
+                <div className="iconArea">
+                  <img className="g-icon" src={val.icon}></img>
+                  <img className="editIcon" src={edit}></img>
+                </div>
+                <div className="close">X</div>
+                <p>{val.gname}</p>
+              </div>
+            )
+          })}
+
+          {/* <div className="game">
             <div className="iconArea">
               <img className="g-icon" src={ff}></img>
               <img className="editIcon" src={edit}></img>
@@ -102,7 +136,7 @@ function ProdMng() {
             </div>
             <div className="close">X</div>
             <p>Roblox</p>
-          </div>
+          </div> */}
         </div>
         {/* </div> */}
       </body>

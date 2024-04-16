@@ -10,6 +10,7 @@ import pp from "../assets/Misc/pp.png";
 import Axios from "axios";
 import { useEffect,useState } from "react";
 import { useParams } from "react-router-dom";
+import { Redirect } from 'react-router';
 
 function GameDet() {
 
@@ -49,6 +50,10 @@ function GameDet() {
     getPackages();
   }, []); // Call getGames() once when component mounts
 
+  // if(game.length===0){
+  //   return <Redirect to="/404" />;
+  // }
+
   return (
     <>
       <header>
@@ -61,7 +66,7 @@ function GameDet() {
         <div className="layout">
           {game.map((val,key)=>{
               return(
-                <div className="game-detail">
+                <div className="game-detail" key={key}>
                   <img src={val.icon} alt="" />
                   <div className="game-desc">
                     <h3>{val.gname}</h3>
@@ -69,9 +74,9 @@ function GameDet() {
 
                   </div>
                   <div className="game-attr">
-                    <p>Platform: #{val.platform}</p>
-                    <p>Genre: #{val.genre}</p>
-                    <p>Publisher: #{val.publisher}</p>
+                    <p>Platform: {val.platform}</p>
+                    <p>Genre: {val.genre}</p>
+                    <p>Publisher: {val.publisher}</p>
                   </div>
                 </div>
               )
@@ -110,7 +115,7 @@ function GameDet() {
               <div className="package-box">
                 {packages.map((val,key)=>{
                 return(
-                      <div className="box">
+                      <div className="box" key={key}>
                         <input name="package" type="radio"></input>
                         <div className="box-detail">
                           <p className="coin">{val.point} {val.unit}</p>
