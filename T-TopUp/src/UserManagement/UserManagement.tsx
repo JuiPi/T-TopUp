@@ -2,13 +2,20 @@ import NavBar from "../Components/NavBar";
 import Footer from "../Components/Footer";
 import Axios from "axios";
 import { useEffect, useState } from "react";
+import { useNavigate } from 'react-router-dom';
 
 function UserManagement() {
 
     const [adminList, setAdminList] = useState([]);
 
+    const navigate = useNavigate();
+
+    // const [deleteAdmin, setDeleteAdmin] = useState({
+    //     username:"",
+    // });
+
     const getAdmin = () => {
-        Axios.get('http://localhost:8000/admindatabase')
+        Axios.get('http://localhost:8019/admindatabase')
         .then((response) => {
             setAdminList(response.data);
             console.log(response.data);
@@ -17,6 +24,21 @@ function UserManagement() {
             console.error('Error fetching games:', error);
         });
     };
+
+    const handleDelete = async (username: string) => {
+        try {
+          
+            await Axios.delete(`http://localhost:8019/admin/${username}`);
+          
+            console.log(`Admin with username ${username} deleted successfully`);
+
+
+        } catch (error) {
+
+            console.error("Error:", error); 
+        }
+      };
+
 
     useEffect(() => {
         getAdmin();
@@ -68,6 +90,7 @@ function UserManagement() {
                                     <button
                                         type="button"
                                         className="w-16 h-6 bg-red-500 text-white text-center text-xs font-semibold rounded-md my-2"
+                                        onClick={() => handleDelete(val.username)}
                                     >
                                         Delete
                                     </button>

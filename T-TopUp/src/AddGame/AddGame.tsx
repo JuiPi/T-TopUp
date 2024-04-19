@@ -40,7 +40,7 @@ function AddGame() {
                         <div className="game-detail">
 
                             {/* {<img src={val}></img>} */}
-                            {/* <div className="w-64 h-64 bg-gray-300 rounded-2xl"></div> */}
+                            <div className="w-64 h-64 bg-gray-300 rounded-2xl"></div>
                             {/* <input type="file"></input> */}
                             <div className="frame" />
 
