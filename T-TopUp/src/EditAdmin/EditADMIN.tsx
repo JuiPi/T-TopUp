@@ -22,7 +22,7 @@ function EditADMIN() {
     e.preventDefault();
     try {
       // Send POST request to backend API endpoint
-      const response = await Axios.post("http://localhost:8000/admin", newAdmin);
+      const response = await Axios.post("http://localhost:8019/admin", newAdmin);
       console.log(response.data); // Log response from the server
       // Handle success, maybe show a success message to the user
     } catch (error) {
