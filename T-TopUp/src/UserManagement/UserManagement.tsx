@@ -15,7 +15,7 @@ function UserManagement() {
     // });
 
     const getAdmin = () => {
-        Axios.get('http://localhost:8019/admindatabase')
+        Axios.get('http://localhost:8119/admindatabase')
         .then((response) => {
             setAdminList(response.data);
             console.log(response.data);
@@ -28,7 +28,7 @@ function UserManagement() {
     const handleDelete = async (username: string) => {
         try {
           
-            await Axios.delete(`http://localhost:8019/admin/${username}`);
+            await Axios.delete(`http://localhost:8119/admin/${username}`);
           
             console.log(`Admin with username ${username} deleted successfully`);
 
