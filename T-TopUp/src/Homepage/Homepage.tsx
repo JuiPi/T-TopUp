@@ -24,7 +24,7 @@ function Homepage() {
   const [gameList, setGameList] = useState([]);
 
   const getGames = () => {
-    Axios.get('http://localhost:8019/gamedatabase')
+    Axios.get('http://localhost:8119/gamedatabase')
       .then((response) => {
         setGameList(response.data);
         console.log(response.data);

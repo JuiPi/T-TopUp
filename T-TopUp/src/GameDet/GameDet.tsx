@@ -24,7 +24,7 @@ function GameDet() {
   const [packages, setPackages] = useState([]);
 
   const getGame = () => {
-    Axios.get(`http://localhost:8019/game/${gameName.gameName}`)
+    Axios.get(`http://localhost:8119/game/${gameName.gameName}`)
       .then((response) => {
         setGame(response.data);
         console.log(response.data);
@@ -35,7 +35,7 @@ function GameDet() {
   };
 
   const getPackages = () => {
-    Axios.get(`http://localhost:8019/package/${gameName.gameName}`)
+    Axios.get(`http://localhost:8119/package/${gameName.gameName}`)
       .then((response) => {
         setPackages(response.data);
         console.log(response.data);
