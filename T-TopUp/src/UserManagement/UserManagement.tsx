@@ -2,13 +2,14 @@ import NavBar from "../Components/NavBar";
 import Footer from "../Components/Footer";
 import Axios from "axios";
 import { useEffect, useState } from "react";
+import { Link } from 'react-router-dom'; 
 import { useNavigate } from 'react-router-dom';
 
 function UserManagement() {
 
     const [adminList, setAdminList] = useState([]);
 
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
     // const [deleteAdmin, setDeleteAdmin] = useState({
     //     username:"",
@@ -31,7 +32,8 @@ function UserManagement() {
             await Axios.delete(`http://localhost:8119/admin/${username}`);
           
             console.log(`Admin with username ${username} deleted successfully`);
-
+            alert(`Admin with username ${username} deleted successfully`);
+            getAdmin(); // Update the admin list
 
         } catch (error) {
 
@@ -41,8 +43,10 @@ function UserManagement() {
 
 
     useEffect(() => {
+
         getAdmin();
-    }, []); // Call getGames() once when component mounts
+        }, []); // Call getGames() once when component mounts
+        
 
     return (
         <>
@@ -94,12 +98,15 @@ function UserManagement() {
                                     >
                                         Delete
                                     </button>
-                                    <button
+                                    <a href={`/edit-admin/${val.username}`}>
+                                        <button
                                         type="button"
                                         className="w-16 h-6 bg-slate-500 text-white text-center text-xs font-semibold rounded-md my-2 ml-5"
-                                    >
+                                        >
                                         Edit
-                                    </button>
+                                        </button>
+                                    </a>
+                                    
                                 </th>
                             </tbody>
                         )
