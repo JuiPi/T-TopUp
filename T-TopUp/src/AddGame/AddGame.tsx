@@ -17,6 +17,15 @@ function AddGame() {
         setDiscountModal(!discountModal);
     };
 
+    const [newAdmin,setNewAdmin] = useState({
+        username:"",
+        password:"",
+        email:"",
+        fname:"",
+        lname:"",
+        phone_num:"",
+      });
+
     // if (modal) {
     //     document.body.classList.add('active-modal')
     // } else {
@@ -30,7 +39,9 @@ function AddGame() {
                 <header><NavBar /></header>
 
                 <div className="mt-24">
-                    <img src={back} id="back-img"></img>
+                    <a href="/product-management">
+                        <img src={back} id="back-img"></img>
+                    </a>
                 </div>
 
                 <main className="layout">

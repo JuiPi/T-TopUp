@@ -48,7 +48,9 @@ function ProdMng() {
         <div className="game-container">
           <div className="game">
             <div className="iconArea">
-              <img className="g-icon" src={addg}></img>
+              <a href="/add-game">
+                <img className="g-icon" src={addg}></img>
+              </a>
             </div>
             <p>Add Game</p>
           </div>

@@ -165,6 +165,55 @@ app.delete('/admin/:username',async (req,res)=>{
             
 })
 
+app.get('/search',(req,res)=>{
+    const squery = req.query.query;
+    const type = req.query.type;
+    
+    if(type === "name"){
+        connection.query(`select * from game where gname like "%${squery}%";`, squery, function (error, results) {
+            if (error) throw error;
+                return res.send(results);
+            });
+
+    }else if(type === "genre"){
+        connection.query(`select * from game where genre like "%${squery}%";`, squery, function (error, results) {
+            if (error) throw error;
+                return res.send(results);
+            });
+
+    }else if(type === "publisher"){
+        connection.query(`select * from game where publisher like "%${squery}%";`, squery, function (error, results) {
+            if (error) throw error;
+                return res.send(results);
+            });
+        
+    }else if(type === "platform"){
+        connection.query(`select * from game where platform like "%${squery}%";`, squery, function (error, results) {
+            if (error) throw error;
+                return res.send(results);
+            });
+        
+    }
+
+})
+
+app.post('/log-in', (req,res) => {
+    const username = req.body.username;
+    const password = req.body.password;
+    connection.query("SELECT * FROM login WHERE username = ? and password = ?",[username,password], function(error,results){
+        if(error){
+            throw error
+        }
+        if(results.length > 0){
+            console.log("Correct");
+            res.status(200).send("Login Successful");
+        } else {
+            res.status(500).send("Username or Password is incorrect");
+        }
+    })
+
+})
+
 
 app.listen(process.env.PORT,()=>{
     console.log(`Server listening on port: ${process.env.PORT}`)

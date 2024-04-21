@@ -11,8 +11,39 @@ import tf2 from "../assets/Game_icon/TF2/tf2_icon.png";
 import tft from "../assets/Game_icon/TFT/tft_icon.png";
 import val from "../assets/Game_icon/Val/val_icon.png";
 import rb from "../assets/Game_icon/Roblox/rob_icon.png";
+import { useLocation, useParams } from "react-router-dom";
+import Axios from "axios";
+import { useEffect, useState } from "react";
 
 function SearchResult() {
+
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  
+  const type = searchParams.get('type');
+  const query = searchParams.get('query');
+
+  const search_query = useParams().squery;
+
+  console.log(search_query)
+  
+  const [search,setSearch] = useState([]);
+
+  const getSearch = () => {
+    Axios.get(`http://localhost:8119/search/?type=${type}&query=${query}`)
+      .then((response:any) => {
+        setSearch(response.data);
+        console.log(response.data);
+      })
+      .catch((error:any) => {
+        console.error('Error fetching search query:', error);
+      });
+  };
+
+  useEffect(() => {
+    getSearch();
+  }, []);
+
   return (
     <>
       <header>
@@ -47,10 +78,21 @@ function SearchResult() {
 
           <p className="found"># Games Found:</p>
         </div>
+        
 
         <div className="game-found">
           <div className="game-container">
-            <div className="game">
+            {search.map((val)=>{
+              return(
+                <div className="game">
+                  <div className="iconArea">
+                    <img className="g-icon" src={val.icon}></img>
+                  </div>
+                  <p>{val.gname}</p>
+                </div>
+              )
+            })}
+            {/* <div className="game">
               <div className="iconArea">
                 <img className="g-icon" src={ff}></img>
               </div>
@@ -104,7 +146,7 @@ function SearchResult() {
                 <img className="g-icon" src={rb}></img>
               </div>
               <p>Roblox</p>
-            </div>
+            </div> */}
           </div>
         </div>
       </body>
