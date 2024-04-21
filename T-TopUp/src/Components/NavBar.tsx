@@ -15,14 +15,14 @@ function NavBar() {
         <div className="nav-button">
           <a href="/">Home</a>
           <a href="/#game-zone">Games</a>
-          <a href="admin-management">User Management</a>
-          <a href="product-management">Product Management</a>
+          <a href="/admin-management">User Management</a>
+          <a href="/product-management">Product Management</a>
         </div>
         <div className="search">
           <form action="#">
             <input type="text" placeholder="Search" name="search"></input>
           </form>
-          <a href="advanced-search">
+          <a href="/advanced-search">
             <img src={mag}></img>
           </a>
         </div>

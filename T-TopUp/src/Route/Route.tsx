@@ -25,7 +25,7 @@ export const router = createBrowserRouter([
       { path: "product-management", element: <ProdMng /> },
       { path: "add-admin", element: <AddADMIN /> },
       { path: "admin-management", element: <UserManagement /> },
-      { path: "edit-admin", element: <EditADMIN /> },
+      { path: "edit-admin/:username", element: <EditADMIN /> },
       { path: "game-detail/:gameName", element: <GameDet/> },
       { path: "payment-success", element: <PaymentSuccessful /> },
       { path: "log-in", element: <LogIn /> },

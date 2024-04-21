@@ -48,6 +48,18 @@ app.get('/admindatabase',(req,res)=>{
     })
 })
 
+app.get('/admin/:name',(req,res)=>{
+    username = req.params.name;
+    
+    if (!username) {
+        return res.status(400).send({ error: true, message: 'Please provide student id.' });
+    }
+    connection.query('SELECT * FROM admin where username=?', username, function (error, results) {
+    if (error) throw error;
+        return res.send(results);
+    });
+})
+
 app.get('/game/:name',(req,res)=>{
     game_name = req.params.name;
     
@@ -85,40 +97,72 @@ app.post('/admin',(req,res)=>{
     });
 });
 
-app.delete('/admin/:username',(req,res)=>{
+app.put('/edit-admin/:username', function (req, res) {
+    let username = req.params.username;
+    let admin = req.body;
+    if (!admin) {
+        return res.status(400).send({ error: student, message: 'Please provide admin information' });
+    }
+    connection.query("UPDATE admin SET ? WHERE username = ?", [admin, username], function (error,
+    results) {
+    if (error) throw error;
+        return res.send({error: false, data: results.affectedRows, message: 'Admin has been updated successfully.'})
+    });
+});
+
+app.delete('/admin/:username',async (req,res)=>{
     let admin_username = req.params.username;
     console.log(admin_username)
+
     if (!admin_username) {
         return res.status(400).send({ error: true, message: 'Please provide admin username' });
     }
-     // Perform deletion from multiple tables
-     connection.query('DELETE FROM manage_game WHERE username = ?', [admin_username], function (error, results) {
-        if (error) {
-            return res.status(500).send({ error: true, message: 'Error deleting from manage_game table' });
+    connection.beginTransaction((err) => {
+        if (err) {
+            console.error("Error beginning transaction:", err);
+            return res.status(500).send("Error beginning transaction");
         }
 
-        connection.query('DELETE FROM manage_admin WHERE manager_username = ?', [admin_username], function (error, results) {
-            if (error) {
-                return res.status(500).send({ error: true, message: 'Error deleting from manage_admin table' });
+        connection.query('DELETE FROM manage_game WHERE username = ?', [admin_username], (error1, results1) => {
+            if (error1) {
+                connection.rollback(() => {
+                    console.error("Error deleting from manage_game:", error1);
+                    res.status(500).send("Error deleting from manage_game");
+                });
             }
 
-            connection.query('DELETE FROM login WHERE username = ?', [admin_username], function (error, results) {
-                if (error) {
-                    return res.status(500).send({ error: true, message: 'Error deleting from login table' });
+            connection.query('DELETE FROM login WHERE username = ?', [admin_username], (error2, results2) => {
+                if (error2) {
+                    connection.rollback(() => {
+                        console.error("Error deleting from login:", error2);
+                        res.status(500).send("Error deleting from login");
+                    });
                 }
 
-                // Finally, delete admin from 'admin' table
-                connection.query('DELETE FROM `admin` WHERE username = ?', [admin_username], function (error, results) {
-                    if (error) {
-                        return res.status(500).send({ error: true, message: 'Error deleting from admin table' });
+                connection.query('DELETE FROM `admin` WHERE username = ?', [admin_username], (error3, results3) => {
+                    if (error3) {
+                        connection.rollback(() => {
+                            console.error("Error deleting from admin:", error3);
+                            res.status(500).send("Error deleting from admin");
+                        });
                     }
 
-                    // Handle successful deletion from all tables
-                    return res.send({ error: false, data: results.affectedRows, message: `${admin_username} has been deleted successfully.` });
+                    connection.commit((err) => {
+                        if (err) {
+                            connection.rollback(() => {
+                                console.error("Error committing transaction:", err);
+                                res.status(500).send("Error committing transaction");
+                            });
+                        }
+
+                        console.log("User deleted successfully from all tables");
+                        res.status(200).send("User deleted successfully from all tables");
+                    });
                 });
             });
         });
     });
+            
 })
 
 
