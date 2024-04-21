@@ -165,12 +165,36 @@ app.delete('/admin/:username',async (req,res)=>{
             
 })
 
-app.get('/search/:query',(req,res)=>{
-    squery = req.params.query;
-    connection.query(`select * from game where gname like "%${squery}%";`, squery, function (error, results) {
-        if (error) throw error;
-            return res.send(results);
-        });
+app.get('/search',(req,res)=>{
+    const squery = req.query.query;
+    const type = req.query.type;
+    
+    if(type === "name"){
+        connection.query(`select * from game where gname like "%${squery}%";`, squery, function (error, results) {
+            if (error) throw error;
+                return res.send(results);
+            });
+
+    }else if(type === "genre"){
+        connection.query(`select * from game where genre like "%${squery}%";`, squery, function (error, results) {
+            if (error) throw error;
+                return res.send(results);
+            });
+
+    }else if(type === "publisher"){
+        connection.query(`select * from game where publisher like "%${squery}%";`, squery, function (error, results) {
+            if (error) throw error;
+                return res.send(results);
+            });
+        
+    }else if(type === "platform"){
+        connection.query(`select * from game where platform like "%${squery}%";`, squery, function (error, results) {
+            if (error) throw error;
+                return res.send(results);
+            });
+        
+    }
+
 })
 
 app.post('/log-in', (req,res) => {

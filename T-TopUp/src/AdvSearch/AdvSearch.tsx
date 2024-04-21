@@ -11,18 +11,22 @@ import Axios from "axios";
 
 function AdvSearch() {
 
-  const [search,SetSearch] = useState("");
+  const [search,setSearch] = useState({
+    search_type:"name",
+    query:""
+  });
 
   const navigate = useNavigate();
 
-  const handleChange = (value:string)=>{
-    SetSearch(value) 
-    console.log(search)
+  const handleChange = (e:any)=>{
+    setSearch((prev)=>({...prev, [e.target.name] : e.target.value}))
   }
 
   const handleSearch = ()=>{
-    navigate(`/search-result/${search}`)
+    navigate(`/search-result/?type=${search.search_type}&query=${search.query}`);
   }
+
+  console.log(search.query);
 
   return (
     <>
@@ -39,13 +43,13 @@ function AdvSearch() {
             <div className="search-content">
 
               <div className="search-choice">
-                <select>
-                  <option value="#">Game Name</option>
-                  <option value="#">Genre</option>
-                  <option value="#">Platform</option>
-                  <option value="#">Publisher</option>
+                <select name="search_type" onChange={handleChange}>
+                  <option value="name">Game Name</option>
+                  <option value="genre">Genre</option>
+                  <option value="platform">Platform</option>
+                  <option value="publisher">Publisher</option>
                 </select>
-                <input type="text" onChange={(e)=> handleChange(e.target.value)} required/>
+                <input type="text" name="query" onChange={handleChange} required/>
               </div>
 
               <br></br>
