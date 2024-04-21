@@ -202,7 +202,7 @@ function GameDet() {
           </div>
 
           <button type="button" className="confirm">
-            <a href="payment-success">Confirm</a>
+            <a href="/payment-success">Confirm</a>
           </button>
         </div>
       </body>

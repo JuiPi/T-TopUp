@@ -28,13 +28,6 @@
     margin-top: -62.5px;
 }
 
-.info {
-    margin-left: -25px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;    
-    
-}
 
 .inputGroup {
     display: flex;
@@ -61,16 +54,23 @@ input {
     height: 25px;
 }
 
-.remember p{
-    margin-left: 7.5px;
-    font-size: 15px;
-}
 
+.info {
+    margin-left: -25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.remember {
+    display:flex;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    margin-left: -215px;
+}
 .submit-button {
     background-color: #456789;
     width: 200px;
     height: 50px;
-    text-align: center;
     color: white;
     font-size: 20px;
 }

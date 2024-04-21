@@ -165,6 +165,31 @@ app.delete('/admin/:username',async (req,res)=>{
             
 })
 
+app.get('/search/:query',(req,res)=>{
+    squery = req.params.query;
+    connection.query(`select * from game where gname like "%${squery}%";`, squery, function (error, results) {
+        if (error) throw error;
+            return res.send(results);
+        });
+})
+
+app.post('/log-in', (req,res) => {
+    const username = req.body.username;
+    const password = req.body.password;
+    connection.query("SELECT * FROM login WHERE username = ? and password = ?",[username,password], function(error,results){
+        if(error){
+            throw error
+        }
+        if(results.length > 0){
+            console.log("Correct");
+            res.status(200).send("Login Successful");
+        } else {
+            res.status(500).send("Username or Password is incorrect");
+        }
+    })
+
+})
+
 
 app.listen(process.env.PORT,()=>{
     console.log(`Server listening on port: ${process.env.PORT}`)
