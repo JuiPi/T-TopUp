@@ -178,7 +178,7 @@ function AddGame() {
                     name = "gdesc"
                     rows={7}
                     className="w-full bg-transparent"
-                    placeholder="Description"
+                    placeholder="Game Description"
                     onChange={handleChangeGame}
                   ></textarea>
                 </p>
@@ -189,7 +189,7 @@ function AddGame() {
                   <input
                     name = "platform"
                     className="w-44 bg-transparent border-0"
-                    placeholder="Input"
+                    placeholder="Platform"
                     onChange={handleChangeGame}
                   ></input>
                 </p>
@@ -198,7 +198,7 @@ function AddGame() {
                   <input
                     name = "genre"
                     className="w-48 bg-transparent border-0"
-                    placeholder="Input"
+                    placeholder="Genre"
                     onChange={handleChangeGame}
                   ></input>
                 </p>
@@ -207,7 +207,7 @@ function AddGame() {
                   <input
                     name = "publisher"
                     className="w-40 bg-transparent border-0"
-                    placeholder="Input"
+                    placeholder="Publisher"
                     onChange={handleChangeGame}
                   ></input>
                 </p>
