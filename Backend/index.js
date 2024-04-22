@@ -52,7 +52,7 @@ app.get('/admin/:name',(req,res)=>{
     username = req.params.name;
     
     if (!username) {
-        return res.status(400).send({ error: true, message: 'Please provide student id.' });
+        return res.status(400).send({ error: true, message: 'Please provide username' });
     }
     connection.query('SELECT * FROM admin where username=?', username, function (error, results) {
     if (error) throw error;
@@ -64,7 +64,7 @@ app.get('/game/:name',(req,res)=>{
     game_name = req.params.name;
     
     if (!game_name) {
-        return res.status(400).send({ error: true, message: 'Please provide student id.' });
+        return res.status(400).send({ error: true, message: 'Please provide game name' });
     }
     connection.query('SELECT * FROM game where gname=?', game_name, function (error, results) {
     if (error) throw error;
@@ -258,12 +258,13 @@ app.post('/add-package/:name', (req,res) => {
         
 });
 
-app.delete('/delete-package/:point',(req,res)=>{
-    point = req.params.point;
+app.delete('/delete-package',(req,res)=>{
+    const point = req.query.point;
+    const gname = req.query.gname;
     if (!point) {
         return res.status(400).send({ error: true, message: 'Please provide point' });
     }
-    connection.query('DELETE FROM package WHERE point = ?', [point], (error, results) => {
+    connection.query('DELETE FROM package WHERE point = ? and gname = ?', [point,gname], (error, results) => {
         if (error) return res.status(500).send("Error deleting from package");
             return res.send({error: false, data: results.affectedRows, message: 'Package has been delete successfully.'});
         });
@@ -314,7 +315,16 @@ app.delete('/remove-game/:name',(req,res)=>{
 });
     
 app.put('/edit-game/:game', (req,res)=>{
-
+    let gamename = req.params.game;
+    let newgame = req.body;
+    if (!newgame) {
+        return res.status(400).send({ error: student, message: 'Please provide game' });
+    }
+    connection.query("UPDATE game SET ? WHERE gname = ?", [newgame, gamename], function (error,
+    results) {
+    if (error) throw error;
+        return res.send({error: false, data: results.affectedRows, message: `${gamename} has been updated successfully.`})
+    });
 });
 
 

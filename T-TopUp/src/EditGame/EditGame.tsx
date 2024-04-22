@@ -7,24 +7,31 @@ import Axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 
 function EditGame() {
-    const games = useParams();
+    const gamename = useParams().gamename;
 
     const navigate = useNavigate();
 
     const [newGame,setNewGame] = useState({});
 
-    const [newPackage,setNewPackage] = useState({});
+    const [newPackage,setNewPackage] = useState([]);
+
+    const [SendPackage,setSendPackage] = useState({
+      gname:"",
+      point:"",
+      unit:"",
+      price:""
+    });
 
     const getFormerGame = () => {
-        console.log(games.gname);
-        Axios.get(`http://localhost:8119/edit-game/${games.gname}`)
+        console.log(`http://localhost:8119/game/${encodeURIComponent(gamename)}`);
+        Axios.get(`http://localhost:8119/game/${encodeURIComponent(gamename)}`)
         .then((response) => {
             setNewGame(response.data[0]);
             console.log(response.data[0]);
         })
         .catch((error) => {
             console.error('Error fetching game:', error);
-        });
+        })
     };
 
 
@@ -32,10 +39,9 @@ function EditGame() {
     e.preventDefault();
     try {
       // Send POST request to backend API endpoint
-      const response = await Axios.put(`http://localhost:8119/edit-game/${games.gname}`, newGame);
+      const response = await Axios.put(`http://localhost:8119/edit-game/${encodeURIComponent(gamename)}`, newGame);
       console.log(response.data); // Log response from the server
       // Handle success, maybe show a success message to the user
-      navigate('/admin-management');
 
       alert("Update Succesful")
 
@@ -47,19 +53,24 @@ function EditGame() {
 
   const handleSubmitPackage = async (e:any) => {
     e.preventDefault();
-    try {
-      // Send POST request to backend API endpoint
-      const response = await Axios.put(`http://localhost:8119/edit-game/${games.gname}`, newPackage);
-      console.log(response.data); // Log response from the server
-      // Handle success, maybe show a success message to the user
-      navigate('/product-management');
-
-      alert("Update Succesful")
-
-    } catch (error) {
-      console.error("Error:", error); // Log any errors
-      // Handle error, maybe show an error message to the user
-    }
+        try {
+            const response = await Axios.post(`http://localhost:8119/add-package/${newGame.gname}`, SendPackage);
+            console.log(response.data);
+            // Handle success, maybe show a success message to the user
+            alert("Add Package Successful")
+            // Reset the newPackage state after successful submission
+            setSendPackage({
+                gname: "", // Reset other fields as needed
+                point: "",
+                unit: "",
+                price: ""
+            });
+            // Optionally, you can fetch the updated package list after adding a new package
+            getPackage();
+        } catch (error) {
+            console.error("Error:", error); // Log any errors
+            // Handle error, maybe show an error message to the user
+        }
   };
 
   const handleDeleteGame = async () => {
@@ -78,7 +89,8 @@ function EditGame() {
 
   useEffect(() => {
     getFormerGame();
-    console.log("game : ",newGame.gname);
+    getPackage();
+    console.log("game : ",gamename);
   }, []);
     
     // const handleSubmitGame = async (e:any) => {
@@ -104,8 +116,8 @@ function EditGame() {
     }
 
     const getPackage = () =>{
-        console.log(`Game Name = ${newGame.gname}`)
-        Axios.get(`http://localhost:8119/package/${newGame.gname}`)
+        console.log(`http://localhost:8119/package/${encodeURIComponent(gamename)}`)
+        Axios.get(`http://localhost:8119/package/${encodeURIComponent(gamename)}`)
       .then((response) => {
         setNewPackage(response.data);
         console.log(response.data);
@@ -138,16 +150,16 @@ function EditGame() {
     // };
 
       const handleChangePackage = (e:any)=>{
-        setNewPackage((prev)=>({...prev, [e.target.name] : e.target.value}))
+        setSendPackage((prev)=>({...prev, [e.target.name] : e.target.value}))
       }
 
       const handleDeletePackage = async (point:number) => {
         try {
-            console.log(`http://localhost:8119/delete-package/${point}`)
-            await Axios.delete(`http://localhost:8119/delete-package/${point}`);
+            console.log(`http://localhost:8119/delete-package/?point=${point}&gname=${gamename}`)
+            await Axios.delete(`http://localhost:8119/delete-package/?point=${point}&gname=${gamename}`);
           
             console.log(`Package with ${point} deleted successfully`);
-            alert(`Package with ${point} ${currentPackage[0].unit} deleted successfully`);
+            alert(`Package with ${point} ${SendPackage.unit} deleted successfully`);
             getPackage(); // Update the package list
 
         } catch (error) {
@@ -158,7 +170,7 @@ function EditGame() {
 
       const handleCancleAll = async ()=>{
         try {
-            await Axios.delete(`http://localhost:8119/remove-game/${currentPackage[0].gname}`);
+            await Axios.delete(`http://localhost:8119/remove-game/${gamename}`);
             alert(`Cancle creating new game`);
             navigate('/product-management');
             
@@ -191,6 +203,7 @@ function EditGame() {
     }
 
   useEffect(() => {
+    getFormerGame;
     getPackage();
   }, []); // Call getGames() once when component mounts
 
@@ -232,6 +245,7 @@ function EditGame() {
                   maxLength={20}
                   placeholder="Game Name"
                   onChange={handleChangeGame}
+                  value={newGame.gname}
                 ></input>
                 <p>
                   <textarea
@@ -240,6 +254,7 @@ function EditGame() {
                     className="w-full bg-transparent"
                     placeholder="Description"
                     onChange={handleChangeGame}
+                    value={newGame.gdesc}
                   ></textarea>
                 </p>
               </div>
@@ -251,6 +266,7 @@ function EditGame() {
                     className="w-44 bg-transparent border-0"
                     placeholder="Input"
                     onChange={handleChangeGame}
+                    value={newGame.platform}
                   ></input>
                 </p>
                 <p>
@@ -260,6 +276,7 @@ function EditGame() {
                     className="w-48 bg-transparent border-0"
                     placeholder="Input"
                     onChange={handleChangeGame}
+                    value={newGame.genre}
                   ></input>
                 </p>
                 <p>
@@ -269,6 +286,7 @@ function EditGame() {
                     className="w-40 bg-transparent border-0"
                     placeholder="Input"
                     onChange={handleChangeGame}
+                    value={newGame.publisher}
                   ></input>
                 </p>
               </div>
@@ -347,7 +365,7 @@ function EditGame() {
                     )}
                   </div>
 
-                  {currentPackage.map((val)=>{
+                  {newPackage.map((val)=>{
                     return(
                         <div className="box">
                             <input name="package" type="radio"></input>
@@ -446,10 +464,10 @@ function EditGame() {
               <a href="/product-management">
                 <button
                   type="button"
-                  className="w-32 h-11 bg-gray-300 text-lg text-black text-center font-semibold rounded-md ml-7"
+                  className="w-32 h-11 bg-red-500 text-lg text-white text-center font-semibold rounded-md ml-7"
                   onClick={handleCancleAll}
                 >
-                  Cancel
+                  Remove
                 </button>
               </a>
             </div>

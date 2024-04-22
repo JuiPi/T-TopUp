@@ -14,6 +14,7 @@ import SearchResult from "../SearchResult/SearchResult";
 import DELETEADMIN from "../DeleteAdmin/DELETEADMIN";
 import GameDet from "../GameDet/GameDet";
 import AddGame from "../AddGame/AddGame";
+import EditGame from "../EditGame/EditGame";
 
 export const router = createBrowserRouter([
   {
@@ -33,6 +34,7 @@ export const router = createBrowserRouter([
       { path: "search-result", element: <SearchResult /> },
       { path: "delete-admin", element: <DELETEADMIN /> },
       { path: "add-game", element: <AddGame /> },
+      { path: "edit-game/:gamename", element: <EditGame /> },
 
     ],
   },
