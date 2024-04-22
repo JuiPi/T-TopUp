@@ -76,7 +76,7 @@ app.get('/package/:name',(req,res)=>{
     game_name = req.params.name;
     
     if (!game_name) {
-        return res.status(400).send({ error: true, message: 'Please provide student id.' });
+        return res.status(400).send({ error: true, message: 'Please provide game name.' });
     }
     connection.query('SELECT * FROM package where gname=?', game_name, function (error, results) {
     if (error) throw error;
@@ -213,6 +213,109 @@ app.post('/log-in', (req,res) => {
     })
 
 })
+
+app.post('/add-game', (req,res) => {
+    game = req.body;
+    // packages = req.body.package;
+    // gname = req.body.game.gname;
+    // packages.gname = gname;
+    console.log(game);
+    // console.log(packages);
+    if (!game) {
+        return res.status(400).send({ error: true, message: 'Please provide Game information' });
+    }
+    // if (!packages) {
+    //     return res.status(400).send({ error: true, message: 'Please provide Package information'})
+    // }
+    connection.query("INSERT INTO game SET ? ", game, function (error, results) {
+        if (error) throw error;
+        // connection.query("INSERT INTO package SET ? ", packages, function (error, results) {
+        //     if (error) throw error;
+        //     // return res.send({error: false, data: results.affectedRows, message: 'New Package has been created successfully.'});
+        // });
+        return res.send({error: false, data: results.affectedRows, message: 'New Game has been created successfully.'});
+    });
+
+})
+
+app.post('/add-package/:name', (req,res) => {
+    packages = req.body;
+    gname = req.params.name;
+    // gname = req.body.game.gname;
+    packages.gname = gname;
+    console.log(packages);
+    // console.log(packages);
+    if (!packages) {
+        return res.status(400).send({ error: true, message: 'Please provide Package information' });
+    }
+    // if (!packages) {
+    //     return res.status(400).send({ error: true, message: 'Please provide Package information'})
+    // }
+    connection.query("INSERT INTO package SET ? ", packages, function (error, results) {
+        if (error) throw error;
+            return res.send({error: false, data: results.affectedRows, message: 'New Package has been created successfully.'});
+    });
+        
+});
+
+app.delete('/delete-package/:point',(req,res)=>{
+    point = req.params.point;
+    if (!point) {
+        return res.status(400).send({ error: true, message: 'Please provide point' });
+    }
+    connection.query('DELETE FROM package WHERE point = ?', [point], (error, results) => {
+        if (error) return res.status(500).send("Error deleting from package");
+            return res.send({error: false, data: results.affectedRows, message: 'Package has been delete successfully.'});
+        });
+        
+})
+
+app.delete('/remove-game/:name',(req,res)=>{
+    gname = req.params.name;
+
+    if (!gname) {
+        return res.status(400).send({ error: true, message: 'Please provide game name' });
+    }
+    connection.beginTransaction((err) => {
+        if (err) {
+            console.error("Error beginning transaction:", err);
+            return res.status(500).send("Error beginning transaction");
+        }
+
+        connection.query('DELETE FROM package WHERE gname = ?', [gname], (error1, results1) => {
+            if (error1) {
+                connection.rollback(() => {
+                    console.error("Error deleting from package:", error1);
+                    res.status(500).send("Error deleting from package");
+                });
+            }
+
+            connection.query('DELETE FROM `game` WHERE gname = ?', [gname], (error2, results2) => {
+                if (error2) {
+                    connection.rollback(() => {
+                        console.error("Error deleting from game:", error2);
+                        res.status(500).send("Error deleting from game");
+                    });
+                }
+                    connection.commit((err) => {
+                        if (err) {
+                            connection.rollback(() => {
+                                console.error("Error committing transaction:", err);
+                                res.status(500).send("Error committing transaction");
+                            });
+                        }
+
+                        console.log("Game deleted successfully from all tables");
+                        res.status(200).send("Game deleted successfully from all tables");
+                    });
+                });
+            });
+        });
+});
+    
+
+
+
 
 
 app.listen(process.env.PORT,()=>{

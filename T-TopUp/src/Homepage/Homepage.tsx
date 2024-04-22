@@ -73,7 +73,7 @@ function Homepage() {
           {gameList.map((val,key)=>{
             return(
               <article className="gamecolumn">
-                <section className="imggame">
+                <section className="imggame" key={key}>
                   <a href={`/game-detail/${val.gname}`}>
                     <img src={val.icon} className="gameicon"></img>
                   </a>
