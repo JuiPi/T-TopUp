@@ -5,13 +5,11 @@ import ProdMng from "../ProdMng/ProdMng";
 import AddADMIN from "../AddAdmin/AddADMIN";
 import UserManagement from "../UserManagement/UserManagement";
 import EditADMIN from "../EditAdmin/EditADMIN";
-// import GameDetail from "../game_detail/game_detail";
 import PaymentSuccessful from "../PaymentSuccess/PaymentSuccessful";
 import LogIn from "../Login/LogIn";
 import App from "../App";
 import AdvSearch from "../AdvSearch/AdvSearch";
 import SearchResult from "../SearchResult/SearchResult";
-import DELETEADMIN from "../DeleteAdmin/DELETEADMIN";
 import GameDet from "../GameDet/GameDet";
 import AddGame from "../AddGame/AddGame";
 import EditGame from "../EditGame/EditGame";
@@ -32,7 +30,6 @@ export const router = createBrowserRouter([
       { path: "log-in", element: <LogIn /> },
       { path: "advanced-search", element: <AdvSearch /> },
       { path: "search-result", element: <SearchResult /> },
-      { path: "delete-admin", element: <DELETEADMIN /> },
       { path: "add-game", element: <AddGame /> },
       { path: "edit-game/:gamename", element: <EditGame /> },
 

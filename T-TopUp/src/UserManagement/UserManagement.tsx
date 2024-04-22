@@ -2,18 +2,11 @@ import NavBar from "../Components/NavBar";
 import Footer from "../Components/Footer";
 import Axios from "axios";
 import { useEffect, useState } from "react";
-import { Link } from 'react-router-dom'; 
-import { useNavigate } from 'react-router-dom';
 
 function UserManagement() {
 
     const [adminList, setAdminList] = useState([]);
 
-    // const navigate = useNavigate();
-
-    // const [deleteAdmin, setDeleteAdmin] = useState({
-    //     username:"",
-    // });
 
     const getAdmin = () => {
         Axios.get('http://localhost:8119/admindatabase')
@@ -32,7 +25,7 @@ function UserManagement() {
             await Axios.delete(`http://localhost:8119/admin/${username}`);
           
             console.log(`Admin with username ${username} deleted successfully`);
-            alert(`Admin with username ${username} deleted successfully`);
+            alert(`Admin ${username} has been deleted `);
             getAdmin(); // Update the admin list
 
         } catch (error) {
@@ -67,13 +60,11 @@ function UserManagement() {
 
                 <div className="text-center mt-8 text-2xl font-bold">
                     {" "}
-                    {/* Apply Tailwind CSS classes for center alignment */}
                     Admin Management
                 </div>
 
                 <table className="mx-auto mt-8 border-collapse border border-gray-400 mb-20">
                     {" "}
-                    {/* Apply Tailwind CSS classes to center the table */}
                     <thead>
                         <tr>
                             <th className="border px-40 py-2 bg-slate-100 py-5">Username</th>

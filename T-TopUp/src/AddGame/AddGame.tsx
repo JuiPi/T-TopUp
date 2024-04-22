@@ -35,11 +35,11 @@ function AddGame() {
           // Send POST request to backend API endpoint
           const response = await Axios.post("http://localhost:8119/add-game", newGame);
           console.log(response.data); // Log response from the server
-          alert('Save game successful');
+          alert(`New game '${newGame.gname}' added`);
           getPackage;
           console.log(`Game Name = ${newGame.gname}`)
           // Handle success, maybe show a success message to the user
-        //   navigate('/product-management');
+          //navigate('/product-management');
         } catch (error) {
           console.error("Error:", error); // Log any errors
           // Handle error, maybe show an error message to the user
@@ -68,7 +68,7 @@ function AddGame() {
             const response = await Axios.post(`http://localhost:8119/add-package/${newGame.gname}`, newPackage);
             console.log(response.data);
             // Handle success, maybe show a success message to the user
-            alert("Add Package Successful")
+            alert("New package has been added")
             // Reset the newPackage state after successful submission
             setNewPackage({
                 gname: "", // Reset other fields as needed
@@ -93,8 +93,8 @@ function AddGame() {
             console.log(`http://localhost:8119/delete-package/?point=${point}&gname=${name}`)
             await Axios.delete(`http://localhost:8119/delete-package/?point=${point}&gname=${name}`);
           
-            console.log(`Package with ${point} deleted successfully`);
-            alert(`Package with ${point} ${currentPackage[0].unit} deleted successfully`);
+            console.log(`${point} Package has been deleted`);
+            alert(`${point} ${currentPackage[0].unit} Package has been deleted`);
             getPackage(); // Update the package list
 
         } catch (error) {
@@ -103,10 +103,11 @@ function AddGame() {
         }
       }
 
-      const handleCancleAll = async ()=>{
+      const handleCancelAll = async ()=>{
         try {
-            await Axios.delete(`http://localhost:8119/remove-game/${currentPackage[0].gname}`);
-            alert(`Cancle creating new game`);
+            console.log(`${newGame.gname}`)
+            await Axios.delete(`http://localhost:8119/remove-game/${newGame.gname}`);
+            alert(`${newGame.gname} has been canceled`);
             navigate('/product-management');
             
         } catch (error) {
@@ -133,19 +134,13 @@ function AddGame() {
     togglePackageModal(); // Then toggle the modal
 };
 
-    const handleClickCanclePackage = ()=>{
+    const handleClickCancelPackage = ()=>{
         togglePackageModal(); // Then toggle the modal
     }
 
   useEffect(() => {
     getPackage();
   }, []); // Call getGames() once when component mounts
-
-  // if (modal) {
-  //     document.body.classList.add('active-modal')
-  // } else {
-  //     document.body.classList.remove('active-modal')
-  // }
 
   return (
     <>
@@ -163,14 +158,12 @@ function AddGame() {
         <main className="layout">
           <section>
             <div className="game-detail">
-              {/* {<img src={val}></img>} */}
               <textarea name = "icon" 
               className="w-64 h-64 bg-gray-300 rounded-2xl" 
               style={{ backgroundColor: '#d9d9d9' }} 
               onChange={handleChangeGame}>
               </textarea>
 
-              {/* <input type="file"></input> */}
               <div className="frame" />
               <div className="game-desc">
                 <input
@@ -283,7 +276,7 @@ function AddGame() {
                             </button>
 
                             <button
-                              onClick={handleClickCanclePackage}
+                              onClick={handleClickCancelPackage}
                               className="w-24 h-9 mt-5 bg-gray-300 text-black text-center font-semibold rounded-md ml-7"
                             >
                               Close
@@ -366,18 +359,6 @@ function AddGame() {
                     )}
                   </div>
 
-                  {/* <div className="box">
-                                        <input name="package" type="radio"></input>
-                                        <button className='w-7 h-7 rounded-full text-white text-lg bg-red-500 absolute' 
-                                            style={{ transform: 'translate(235px, -10px)' } }
-                                        >
-                                            <p style={{ transform: 'translate(0px, -2.5px)' }}>x</p>
-                                        </button>
-                                        <div className="box-detail">
-                                            <p>test1</p>
-                                        </div>
-                   </div> */}
-
                 </div>
               </div>
             </section>
@@ -386,19 +367,16 @@ function AddGame() {
              <a href="/product-management"> <button
                 type="button"
                 className="w-32 h-11 bg-green-500 text-lg text-white text-center font-semibold rounded-md"
-                // onClick={handleSubmit}
               >
                 Save
               </button></a>
-              <a href="/product-management">
                 <button
                   type="button"
                   className="w-32 h-11 bg-gray-300 text-lg text-black text-center font-semibold rounded-md ml-7"
-                  onClick={handleCancleAll}
+                  onClick={handleCancelAll}
                 >
                   Cancel
                 </button>
-              </a>
             </div>
           </div>
         </main>

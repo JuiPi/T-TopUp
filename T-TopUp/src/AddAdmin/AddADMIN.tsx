@@ -1,8 +1,8 @@
 import Footer from "../Components/Footer";
 import NavBar from "../Components/NavBar";
-import Edit_Cover from "../assets/Misc/Edit_Cover.png";
+import icon from "../assets/Misc/admin.png"
 import BackButton from "../assets/Misc/back.png"
-import "./AddADMIN.css";
+import "../EditAdmin/EditADMIN.css"
 import Axios from "axios";
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
@@ -28,6 +28,7 @@ function AddADMIN() {
       const response = await Axios.post("http://localhost:8119/admin", newAdmin);
       console.log(response.data); // Log response from the server
       // Handle success, maybe show a success message to the user
+      alert(`Admin ${newAdmin.username} has been added successfully`)
       navigate('/admin-management');
     } catch (error) {
       console.error("Error:", error); // Log any errors
@@ -38,8 +39,6 @@ function AddADMIN() {
   const handleChange = (e:any)=>{
     setNewAdmin((prev)=>({...prev, [e.target.name] : e.target.value}))
   }
-
-  // console.log(newAdmin)
 
   return (
     <>
@@ -56,8 +55,7 @@ function AddADMIN() {
         <div className="Body">
           <div className="UserManageFrame drop-shadow">
             <div className="UserPicAdj">
-              {/* ADD ADMIN IMAGE */}
-              <img className="UserPic" src={Edit_Cover}></img>
+              <img className="UserPic" src={icon}></img>
             </div>
 
             <div>

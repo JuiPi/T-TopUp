@@ -2,11 +2,8 @@ import NavBar from "../Components/NavBar";
 import Footer from "../Components/Footer";
 import back from "../assets/Misc/back.png";
 import "./AdvSearch.css";
-// import { Link } from 'react-router-dom';
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
-
-import Axios from "axios";
 
 
 function AdvSearch() {

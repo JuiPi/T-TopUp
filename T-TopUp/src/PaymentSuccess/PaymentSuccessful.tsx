@@ -16,7 +16,7 @@ return(
         
         <h1>Payment Successful</h1>
         
-        <button className="back"><a href="/">Back to Menu</a></button>
+        <button className="back-menu"><a href="/">Back to Menu</a></button>
     </div>
     
     <Footer/>

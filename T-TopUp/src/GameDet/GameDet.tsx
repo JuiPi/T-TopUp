@@ -1,7 +1,6 @@
 import NavBar from "../Components/NavBar";
 import Footer from "../Components/Footer";
 import back from "../assets/Misc/back.png";
-import val from "../assets/Game_icon/Val/val_icon.png";
 import "./GameDet.css";
 import credit from "../assets/Misc/credit.png";
 import mobile from "../assets/Misc/mobile.png";
@@ -10,14 +9,10 @@ import pp from "../assets/Misc/pp.png";
 import Axios from "axios";
 import { useEffect,useState } from "react";
 import { useParams } from "react-router-dom";
-import { Redirect } from 'react-router';
 
 function GameDet() {
 
   const gameName = useParams();
-  // console.log(gameName.gameName);
-
-  // console.log(`http://localhost:8000/game/${gameName}`)
 
   const [game, setGame] = useState([]);
 
@@ -50,9 +45,6 @@ function GameDet() {
     getPackages();
   }, []); // Call getGames() once when component mounts
 
-  // if(game.length===0){
-  //   return <Redirect to="/404" />;
-  // }
 
   return (
     <>
@@ -73,8 +65,8 @@ function GameDet() {
                   <div className="game-desc">
                     <h3>{val.gname}</h3>
                     <p>{val.gdesc}</p>
-
                   </div>
+                  <div className="time"></div>
                   <div className="game-attr">
                     <p>Platform: {val.platform}</p>
                     <p>Genre: {val.genre}</p>
@@ -83,32 +75,6 @@ function GameDet() {
                 </div>
               )
             })}
-          {/* <div className="game-detail">
-            <img src={val}></img>
-
-            <div className="game-desc">
-
-              <h3>GAME NAME</h3>
-              <p>
-                this is a description. this is a description. this is a
-                description. this is a description. this is a description. this
-                is a description. this is a description. this is a description.
-                this is a description. this is a description. this is a
-                description. this is a description. this is a description. this
-                is a description. this is a description. this is a description.
-                this is a description. this is a description. this is a
-                description. this is a description. this is a description. this
-                is a description. this is a description. this is a description.
-                this is a description. this is a description.
-              </p>
-            </div>
-
-            <div className="game-attr">
-              <p>Platform: #</p>
-              <p>Genre: #</p>
-              <p>Publisher: #</p>
-            </div>
-          </div> */}
 
           <div className="detail">
             <section className="package">
@@ -156,30 +122,11 @@ function GameDet() {
               <h6>Payment</h6>
 
               <div className="method-container">
-              
-
-                {/* IMG only */}
-                {/* <div className="method">
-                  <img src={credit}></img>
-                  <p>VISA / Mastercard</p>
-                </div>
-
-                <div className="method">
-                  <img src={mobile}></img>
-                  <p>Mobile Banking</p>
-                </div>
-
-                <div className="method">
-                  <img src={pp}></img>
-                  <p>PromptPay</p>
-                </div> */}
-
-                {/* Radio button */}
                 <div className="method">
                   <input id="credit" name="payment" type="radio"></input>
                   <div className="method-icon">
                     <img src={credit}></img>
-                    <label for="credit">VISA / Mastercard</label>
+                    <label htmlFor="credit">VISA / Mastercard</label>
                   </div>
                 </div>
 
@@ -187,7 +134,7 @@ function GameDet() {
                   <input id="mobile" name="payment" type="radio"></input>
                   <div className="method-icon">
                     <img src={mobile}></img>
-                    <label for="mobile">Mobile Banking</label>
+                    <label htmlFor="mobile">Mobile Banking</label>
                   </div>
                 </div>
 
@@ -195,7 +142,7 @@ function GameDet() {
                   <input id="pp" name="payment" type="radio"></input>
                   <div className="method-icon">
                     <img src={pp}></img>
-                    <label for="pp">PromptPay</label>
+                    <label htmlFor="pp">PromptPay</label>
                   </div>
                 </div>
 

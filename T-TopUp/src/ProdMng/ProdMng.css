@@ -6,14 +6,14 @@
 
 .game {
     margin: 30px 15px 70px;
-    width: 200px;
-    height: 200px;
     position: relative;
     display: inline-block;
 }
 
 .iconArea img{
     border-radius: 15%;
+    width: 200px;
+    height: 200px;
 }
 
 .iconArea .editIcon{
@@ -37,9 +37,6 @@
     color: white;
     font-size: 20px;
     font-family: sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .game p {
@@ -62,7 +59,7 @@
 }
 
 .game-container p {
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: bold;
     font-size: 20px;
 }

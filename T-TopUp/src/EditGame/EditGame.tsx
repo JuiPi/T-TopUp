@@ -43,7 +43,7 @@ function EditGame() {
       console.log(response.data); // Log response from the server
       // Handle success, maybe show a success message to the user
 
-      alert("Update Succesful")
+      alert("Changes saved")
 
     } catch (error) {
       console.error("Error:", error); // Log any errors
@@ -57,7 +57,7 @@ function EditGame() {
             const response = await Axios.post(`http://localhost:8119/add-package/${newGame.gname}`, SendPackage);
             console.log(response.data);
             // Handle success, maybe show a success message to the user
-            alert("Add Package Successful")
+            alert("Package successfully added")
             // Reset the newPackage state after successful submission
             setSendPackage({
                 gname: "", // Reset other fields as needed
@@ -79,7 +79,7 @@ function EditGame() {
         await Axios.delete(`http://localhost:8119/edit-game/${games.gname}`);
       
         console.log(`Game ${newGame.gname} deleted successfully`);
-        alert(`Game ${newGame.gname} deleted successfully`);
+        alert(`Game ${newGame.gname} has been deleted`);
         navigate('/product-management');
 
     } catch (error) {
@@ -168,10 +168,10 @@ function EditGame() {
         }
       }
 
-      const handleCancleAll = async ()=>{
+      const handleCancelAll = async ()=>{
         try {
             await Axios.delete(`http://localhost:8119/remove-game/${gamename}`);
-            alert(`Cancle creating new game`);
+            alert(`${gamename} has been removed`);
             navigate('/product-management');
             
         } catch (error) {
@@ -198,7 +198,7 @@ function EditGame() {
     togglePackageModal(); // Then toggle the modal
 };
 
-    const handleClickCanclePackage = ()=>{
+    const handleClickCancelPackage = ()=>{
         togglePackageModal(); // Then toggle the modal
     }
 
@@ -295,7 +295,7 @@ function EditGame() {
 
           <button
                 type="button"
-                className="w-32 h-11 bg-green-500 text-lg text-white text-center font-semibold rounded-md"
+                className="save-attr w-32 h-11 bg-green-500 text-lg text-white text-center font-semibold rounded-md"
                 onClick={handleSubmitGame}
               >
                 Save Game
@@ -354,7 +354,7 @@ function EditGame() {
                             </button>
 
                             <button
-                              onClick={handleClickCanclePackage}
+                              onClick={handleClickCancelPackage}
                               className="w-24 h-9 mt-5 bg-gray-300 text-black text-center font-semibold rounded-md ml-7"
                             >
                               Close
@@ -437,18 +437,6 @@ function EditGame() {
                     )}
                   </div>
 
-                  {/* <div className="box">
-                                        <input name="package" type="radio"></input>
-                                        <button className='w-7 h-7 rounded-full text-white text-lg bg-red-500 absolute' 
-                                            style={{ transform: 'translate(235px, -10px)' } }
-                                        >
-                                            <p style={{ transform: 'translate(0px, -2.5px)' }}>x</p>
-                                        </button>
-                                        <div className="box-detail">
-                                            <p>test1</p>
-                                        </div>
-                   </div> */}
-
                 </div>
               </div>
             </section>
@@ -457,19 +445,16 @@ function EditGame() {
               <button
                 type="button"
                 className="w-32 h-11 bg-green-500 text-lg text-white text-center font-semibold rounded-md"
-                // onClick={handleSubmit}
               >
                 Save
               </button>
-              <a href="/product-management">
                 <button
                   type="button"
                   className="w-32 h-11 bg-red-500 text-lg text-white text-center font-semibold rounded-md ml-7"
-                  onClick={handleCancleAll}
+                  onClick={handleCancelAll}
                 >
                   Remove
                 </button>
-              </a>
             </div>
           </div>
         </main>

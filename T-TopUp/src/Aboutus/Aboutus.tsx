@@ -13,7 +13,6 @@ function Aboutus() {
       <header>
         <NavBar />
       </header>
-      {/*  */}
     <body className="mb-20">
         <div>
           <p className="TeamMem">Our Team Members</p>
@@ -21,7 +20,7 @@ function Aboutus() {
       <div className="flex justify-center">
         <div className="container">
           <div className="grid-container">
-            {/*  */}
+
             <div className="column">
               <div className="Picadjust">
                 <img className="PicFrame" src={term}></img>
@@ -37,7 +36,7 @@ function Aboutus() {
                 <p className="GapNum">6588059</p>
               </div>
             </div>
-            {/*  */}
+    
             <div className="column">
               <div className="Picadjust">
                 <img className="PicFrame" src={thames}></img>
@@ -54,7 +53,7 @@ function Aboutus() {
                 <p className="GapNum">6588061</p>
               </div>
             </div>
-            {/*  */}
+    
             <div className="column">
               <div className="Picadjust">
                 <img className="PicFrame" src={mac}></img>
@@ -71,7 +70,7 @@ function Aboutus() {
                 <p className="GapNum">6588068</p>
               </div>
             </div>
-            {/*  */}
+    
             <div className="column">
               <div className="Picadjust">
                 <img className="PicFrame" src={jui}></img>
@@ -88,7 +87,7 @@ function Aboutus() {
                 <p className="GapNum">6588075</p>
               </div>
             </div>
-            {/*  */}
+    
             <div className="column">
               <div className="Picadjust">
                 <img className="PicFrame" src={pran}></img>

@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import Footer from "../Components/Footer";
 import NavBar from "../Components/NavBar";
-import Edit_Cover from "../assets/Misc/Edit_Cover.png";
+import icon from "../assets/Misc/admin.png"
 import BackButton from "../assets/Misc/back.png"
 import "./EditADMIN.css";
 import Axios from "axios";
@@ -42,7 +42,7 @@ function EditADMIN() {
       // Handle success, maybe show a success message to the user
       navigate('/admin-management');
 
-      alert("Update Succesful")
+      alert(`Admin ${newAdmin.username} has been updated`)
 
     } catch (error) {
       console.error("Error:", error); // Log any errors
@@ -61,7 +61,7 @@ function EditADMIN() {
         await Axios.delete(`http://localhost:8119/admin/${newAdmin.username}`);
       
         console.log(`Admin with username ${newAdmin.username} deleted successfully`);
-        alert(`Admin with username ${newAdmin.username} deleted successfully`);
+        alert(`Admin ${newAdmin.username} has been deleted `);
         navigate('/admin-management');
 
     } catch (error) {
@@ -90,8 +90,8 @@ function EditADMIN() {
         <form className="Body">
           <div className="UserManageFrame drop-shadow">
             <div className="UserPicAdj">
-              {/* Edit ADMIN IMAGE */}
-              <img className="UserPic" src={Edit_Cover}></img>
+              
+              <img className="UserPic" src={icon}></img>
             </div>
 
             <div>
@@ -118,12 +118,12 @@ function EditADMIN() {
                 <div className="inputsRow">
                   <div className="inputGroup">
                     <label >Email</label>
-                      <input type="text"  className="Edit" name="email" value={newAdmin.email} onChange={handleChange}/>
+                      <input type="text"  name="email" value={newAdmin.email} onChange={handleChange}/>
                   </div>
                 
                   <div className="inputGroup">
                     <label>Last Name</label>
-                      <input type="text" className="Edit" name="lname" value={newAdmin.lname} onChange={handleChange}/>
+                      <input type="text" name="lname" value={newAdmin.lname} onChange={handleChange}/>
                   </div>
                 </div>
               </div>
@@ -132,24 +132,22 @@ function EditADMIN() {
                 <div className="inputsRow">
                   <div className="inputGroup">
                     <label >Password</label>
-                      <input type="text"  className="Edit" name="password" value={newAdmin.password} onChange={handleChange}/>
+                      <input type="text" name="password" value={newAdmin.password} onChange={handleChange}/>
                   </div>
                 
                   <div className="inputGroup">
                     <label>Telephone</label>
-                      <input type="text"className="Edit" name="phone_num" value={newAdmin.phone_num} onChange={handleChange}/>
+                      <input type="text" name="phone_num" value={newAdmin.phone_num} onChange={handleChange}/>
                   </div>
                 </div>
               </div>
 
-              {/* <a href="admin-management"> */}
                 <button type="submit" className="SubmitbuttonA" onClick={handleSubmit}>
                   SAVE
                 </button>
                 <button type="reset" className="SubmitbuttonB" onClick={handleDelete}>
                   DELETE
                 </button>
-              {/* </a> */}
             </div>
           </div>
         </form>

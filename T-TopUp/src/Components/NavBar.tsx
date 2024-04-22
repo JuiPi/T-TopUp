@@ -19,11 +19,11 @@ function NavBar() {
           <a href="/product-management">Product Management</a>
         </div>
         <div className="search">
-          <form action="#">
-            <input type="text" placeholder="Search" name="search"></input>
-          </form>
           <a href="/advanced-search">
-            <img src={mag}></img>
+            <div>
+              <p className="search-text">Search...</p>
+              <img src={mag}></img>
+              </div>
           </a>
         </div>
       </switch>
