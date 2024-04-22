@@ -13,6 +13,8 @@ function EditGame() {
 
     const [newGame,setNewGame] = useState({});
 
+    const [newPackage,setNewPackage] = useState({});
+
     const getFormerGame = () => {
         console.log(games.gname);
         Axios.get(`http://localhost:8119/edit-game/${games.gname}`)
@@ -26,7 +28,7 @@ function EditGame() {
     };
 
 
-  const handleSubmit = async (e:any) => {
+  const handleSubmitGame = async (e:any) => {
     e.preventDefault();
     try {
       // Send POST request to backend API endpoint
@@ -43,12 +45,24 @@ function EditGame() {
     }
   };
 
-  const handleChange = (e:any)=>{
-    setNewGame((prev)=>({...prev, [e.target.name] : e.target.value}))
-    console.log(newGame)
-  }
+  const handleSubmitPackage = async (e:any) => {
+    e.preventDefault();
+    try {
+      // Send POST request to backend API endpoint
+      const response = await Axios.put(`http://localhost:8119/edit-game/${games.gname}`, newPackage);
+      console.log(response.data); // Log response from the server
+      // Handle success, maybe show a success message to the user
+      navigate('/product-management');
 
-  const handleDelete = async () => {
+      alert("Update Succesful")
+
+    } catch (error) {
+      console.error("Error:", error); // Log any errors
+      // Handle error, maybe show an error message to the user
+    }
+  };
+
+  const handleDeleteGame = async () => {
     try {
       
         await Axios.delete(`http://localhost:8119/edit-game/${games.gname}`);
@@ -67,23 +81,23 @@ function EditGame() {
     console.log("game : ",newGame.gname);
   }, []);
     
-    const handleSubmitGame = async (e:any) => {
-        e.preventDefault();
-        try {
-          // setNewPackage(prevPackage => ({...prevPackage, gname: newGame.gname}));
-          // Send POST request to backend API endpoint
-          const response = await Axios.post("http://localhost:8119/edit-game", newGame);
-          console.log(response.data); // Log response from the server
-          alert('Save game successful');
-          getPackage;
-          console.log(`Game Name = ${newGame.gname}`)
-          // Handle success, maybe show a success message to the user
-        //   navigate('/product-management');
-        } catch (error) {
-          console.error("Error:", error); // Log any errors
-          // Handle error, maybe show an error message to the user
-        }
-      };
+    // const handleSubmitGame = async (e:any) => {
+    //     e.preventDefault();
+    //     try {
+    //       // setNewPackage(prevPackage => ({...prevPackage, gname: newGame.gname}));
+    //       // Send POST request to backend API endpoint
+    //       const response = await Axios.post("http://localhost:8119/edit-game", newGame);
+    //       console.log(response.data); // Log response from the server
+    //       alert('Save game successful');
+    //       getPackage;
+    //       console.log(`Game Name = ${newGame.gname}`)
+    //       // Handle success, maybe show a success message to the user
+    //     //   navigate('/product-management');
+    //     } catch (error) {
+    //       console.error("Error:", error); // Log any errors
+    //       // Handle error, maybe show an error message to the user
+    //     }
+    //   };
 
     const handleChangeGame = (e:any)=>{
         setNewGame((prev)=>({...prev, [e.target.name] : e.target.value}))
@@ -93,7 +107,7 @@ function EditGame() {
         console.log(`Game Name = ${newGame.gname}`)
         Axios.get(`http://localhost:8119/package/${newGame.gname}`)
       .then((response) => {
-        setCurrentPackage(response.data);
+        setNewPackage(response.data);
         console.log(response.data);
       })
       .catch((error) => {
@@ -101,27 +115,27 @@ function EditGame() {
       });
     };
 
-    const handleSubmitPackage = async (e: React.FormEvent) => {
-        e.preventDefault();
-        try {
-            const response = await Axios.post(`http://localhost:8119/add-package/${newGame.gname}`, newPackage);
-            console.log(response.data);
-            // Handle success, maybe show a success message to the user
-            alert("Add Package Successful")
-            // Reset the newPackage state after successful submission
-            setNewPackage({
-                gname: "", // Reset other fields as needed
-                point: "",
-                unit: "",
-                price: ""
-            });
-            // Optionally, you can fetch the updated package list after adding a new package
-            getPackage();
-        } catch (error) {
-            console.error("Error:", error); // Log any errors
-            // Handle error, maybe show an error message to the user
-        }
-    };
+    // const handleSubmitPackage = async (e: React.FormEvent) => {
+    //     e.preventDefault();
+    //     try {
+    //         const response = await Axios.post(`http://localhost:8119/add-package/${newGame.gname}`, newPackage);
+    //         console.log(response.data);
+    //         // Handle success, maybe show a success message to the user
+    //         alert("Add Package Successful")
+    //         // Reset the newPackage state after successful submission
+    //         setNewPackage({
+    //             gname: "", // Reset other fields as needed
+    //             point: "",
+    //             unit: "",
+    //             price: ""
+    //         });
+    //         // Optionally, you can fetch the updated package list after adding a new package
+    //         getPackage();
+    //     } catch (error) {
+    //         console.error("Error:", error); // Log any errors
+    //         // Handle error, maybe show an error message to the user
+    //     }
+    // };
 
       const handleChangePackage = (e:any)=>{
         setNewPackage((prev)=>({...prev, [e.target.name] : e.target.value}))
