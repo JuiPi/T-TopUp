@@ -88,10 +88,10 @@ function AddGame() {
         setNewPackage((prev)=>({...prev, [e.target.name] : e.target.value}))
       }
 
-      const handleDeletePackage = async (point:number) => {
+      const handleDeletePackage = async (point:number,name:string) => {
         try {
-            console.log(`http://localhost:8119/delete-package/${point}`)
-            await Axios.delete(`http://localhost:8119/delete-package/${point}`);
+            console.log(`http://localhost:8119/delete-package/?point=${point}&gname=${name}`)
+            await Axios.delete(`http://localhost:8119/delete-package/?point=${point}&gname=${name}`);
           
             console.log(`Package with ${point} deleted successfully`);
             alert(`Package with ${point} ${currentPackage[0].unit} deleted successfully`);
@@ -224,7 +224,7 @@ function AddGame() {
 
           <button
                 type="button"
-                className="w-32 h-11 bg-green-500 text-lg text-white text-center font-semibold rounded-md"
+                className="save-attr w-32 h-11 bg-green-500 text-lg text-white text-center font-semibold rounded-md"
                 onClick={handleSubmitGame}
               >
                 Save Game
@@ -298,7 +298,7 @@ function AddGame() {
                     return(
                         <div className="box">
                             <input name="package" type="radio"></input>
-                            <button className='w-7 h-7 rounded-full text-white text-lg bg-red-500 absolute' onClick={()=>handleDeletePackage(val.point)}
+                            <button className='w-7 h-7 rounded-full text-white text-lg bg-red-500 absolute' onClick={()=>handleDeletePackage(val.point,val.gname)}
                                             style={{ transform: 'translate(235px, -10px)' }}
                                         >
                                             <p style={{ transform: 'translate(0px, -2.5px)' }}>x</p>

@@ -30,6 +30,18 @@ function ProdMng() {
       });
   };
 
+  const handleCancleAll = async (gamename:string)=>{
+    try {
+        await Axios.delete(`http://localhost:8119/remove-game/${gamename}`);
+        alert(`Cancle creating new game`);
+        getGames();
+        
+    } catch (error) {
+
+        console.error("Error:", error); 
+    }
+  }
+
   useEffect(() => {
     getGames();
   }, []); // Call getGames() once when component mounts
@@ -59,10 +71,12 @@ function ProdMng() {
             return(
               <div className="game" key={key}>
                 <div className="iconArea">
-                  <img className="g-icon" src={val.icon}></img>
-                  <img className="editIcon" src={edit}></img>
+                  <a href={`/edit-game/${val.gname}`}>
+                    <img className="g-icon" src={val.icon}></img>
+                  <img className="editIcon" src={edit}></img></a>
+                  
                 </div>
-                <div className="close">X</div>
+                <div className="close" onClick={() =>{handleCancleAll(val.gname)}}>X</div>
                 <p>{val.gname}</p>
               </div>
             )

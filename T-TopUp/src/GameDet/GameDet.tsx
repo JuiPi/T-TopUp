@@ -61,8 +61,10 @@ function GameDet() {
       </header>
 
       <body>
+        <a href="/#game-zone">
         <img src={back} id="back-img"></img>
-
+        </a>
+        
         <div className="layout">
           {game.map((val,key)=>{
               return(
