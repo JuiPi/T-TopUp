@@ -4,29 +4,69 @@ import Footer from "../Components/Footer";
 import back from "../assets/Misc/back.png";
 import "../GameDet/GameDet.css";
 import Axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
-function AddGame() {
+function EditGame() {
+    const username = useParams();
+
     const navigate = useNavigate();
 
-    const [newGame, setNewGame] = useState({
-        icon:"",
-        gname:"",
-        gdesc:"",
-        genre:"",
-        publisher:"",
-        platform:"",
-    });
+    const [newGame,setNewGame] = useState({});
 
-    const [currentPackage,setCurrentPackage] = useState([]);
+    const getFormerAdmin = () => {
+        console.log(username.username);
+        Axios.get(`http://localhost:8119/admin/${username.username}`)
+        .then((response) => {
+            setNewAdmin(response.data[0]);
+            console.log(response.data[0]);
+        })
+        .catch((error) => {
+            console.error('Error fetching admin:', error);
+        });
+    };
 
-    const [newPackage, setNewPackage] = useState({
-      gname:"",
-      point:"",
-      unit:"",
-      price:""
-    })
 
+  const handleSubmit = async (e:any) => {
+    e.preventDefault();
+    try {
+      // Send POST request to backend API endpoint
+      const response = await Axios.put(`http://localhost:8119/edit-admin/${username.username}`, newAdmin);
+      console.log(response.data); // Log response from the server
+      // Handle success, maybe show a success message to the user
+      navigate('/admin-management');
+
+      alert("Update Succesful")
+
+    } catch (error) {
+      console.error("Error:", error); // Log any errors
+      // Handle error, maybe show an error message to the user
+    }
+  };
+
+  const handleChange = (e:any)=>{
+    setNewAdmin((prev)=>({...prev, [e.target.name] : e.target.value}))
+    console.log(newAdmin)
+  }
+
+  const handleDelete = async () => {
+    try {
+      
+        await Axios.delete(`http://localhost:8119/admin/${newAdmin.username}`);
+      
+        console.log(`Admin with username ${newAdmin.username} deleted successfully`);
+        alert(`Admin with username ${newAdmin.username} deleted successfully`);
+        navigate('/admin-management');
+
+    } catch (error) {
+
+        console.error("Error:", error); 
+    }
+  };
+
+  useEffect(() => {
+    getFormerAdmin();
+    console.log("admin : ",newAdmin.username);
+  }, []);
     
     const handleSubmitGame = async (e:any) => {
         e.preventDefault();
@@ -383,13 +423,13 @@ function AddGame() {
             </section>
 
             <div className="flex justify-end">
-             <a href="/product-management"> <button
+              <button
                 type="button"
                 className="w-32 h-11 bg-green-500 text-lg text-white text-center font-semibold rounded-md"
                 // onClick={handleSubmit}
               >
                 Save
-              </button></a>
+              </button>
               <a href="/product-management">
                 <button
                   type="button"
@@ -411,4 +451,4 @@ function AddGame() {
   );
 }
 
-export default AddGame;
+export default EditGame;
