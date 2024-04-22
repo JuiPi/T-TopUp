@@ -7,21 +7,21 @@ import Axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 
 function EditGame() {
-    const username = useParams();
+    const games = useParams();
 
     const navigate = useNavigate();
 
     const [newGame,setNewGame] = useState({});
 
-    const getFormerAdmin = () => {
-        console.log(username.username);
-        Axios.get(`http://localhost:8119/admin/${username.username}`)
+    const getFormerGame = () => {
+        console.log(games.gname);
+        Axios.get(`http://localhost:8119/edit-game/${games.gname}`)
         .then((response) => {
-            setNewAdmin(response.data[0]);
+            setNewGame(response.data[0]);
             console.log(response.data[0]);
         })
         .catch((error) => {
-            console.error('Error fetching admin:', error);
+            console.error('Error fetching game:', error);
         });
     };
 
@@ -30,7 +30,7 @@ function EditGame() {
     e.preventDefault();
     try {
       // Send POST request to backend API endpoint
-      const response = await Axios.put(`http://localhost:8119/edit-admin/${username.username}`, newAdmin);
+      const response = await Axios.put(`http://localhost:8119/edit-game/${games.gname}`, newGame);
       console.log(response.data); // Log response from the server
       // Handle success, maybe show a success message to the user
       navigate('/admin-management');
@@ -44,28 +44,27 @@ function EditGame() {
   };
 
   const handleChange = (e:any)=>{
-    setNewAdmin((prev)=>({...prev, [e.target.name] : e.target.value}))
-    console.log(newAdmin)
+    setNewGame((prev)=>({...prev, [e.target.name] : e.target.value}))
+    console.log(newGame)
   }
 
   const handleDelete = async () => {
     try {
       
-        await Axios.delete(`http://localhost:8119/admin/${newAdmin.username}`);
+        await Axios.delete(`http://localhost:8119/edit-game/${games.gname}`);
       
-        console.log(`Admin with username ${newAdmin.username} deleted successfully`);
-        alert(`Admin with username ${newAdmin.username} deleted successfully`);
-        navigate('/admin-management');
+        console.log(`Game ${newGame.gname} deleted successfully`);
+        alert(`Game ${newGame.gname} deleted successfully`);
+        navigate('/product-management');
 
     } catch (error) {
-
         console.error("Error:", error); 
     }
   };
 
   useEffect(() => {
-    getFormerAdmin();
-    console.log("admin : ",newAdmin.username);
+    getFormerGame();
+    console.log("game : ",newGame.gname);
   }, []);
     
     const handleSubmitGame = async (e:any) => {
@@ -73,7 +72,7 @@ function EditGame() {
         try {
           // setNewPackage(prevPackage => ({...prevPackage, gname: newGame.gname}));
           // Send POST request to backend API endpoint
-          const response = await Axios.post("http://localhost:8119/add-game", newGame);
+          const response = await Axios.post("http://localhost:8119/edit-game", newGame);
           console.log(response.data); // Log response from the server
           alert('Save game successful');
           getPackage;

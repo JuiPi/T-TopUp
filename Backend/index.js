@@ -313,7 +313,9 @@ app.delete('/remove-game/:name',(req,res)=>{
         });
 });
     
+app.put('/edit-game/:game', (req,res)=>{
 
+});
 
 
 
