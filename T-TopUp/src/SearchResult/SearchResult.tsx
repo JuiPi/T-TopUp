@@ -47,7 +47,7 @@ function SearchResult() {
           <hr></hr>
 
 
-          <p className="found"># Games Found:</p>
+          <p className="found"># Games Found: {search.length}</p>
         </div>
         
 

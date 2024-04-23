@@ -43,8 +43,25 @@ function GameDet() {
   useEffect(() => {
     getGame();
     getPackages();
+    const script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.async = true;
+    script.src = '//www.tickcounter.com/static/js/loader.js';
+    const parentElem = document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0];
+    parentElem.appendChild(script);
+
   }, []); // Call getGames() once when component mounts
 
+
+    const formatDate = (date: Date): string =>{
+        const year = date.getFullYear();
+        const month = String(date.getMonth() + 1).padStart(2, '0'); // Adding 1 because January is 0
+        const day = String(date.getDate()).padStart(2, '0');
+        const hours = String(date.getHours()).padStart(2, '0');
+        const minutes = String(date.getMinutes()).padStart(2, '0');
+        const seconds = String(date.getSeconds()).padStart(2, '0');
+        return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+    };
 
   return (
     <>
@@ -66,7 +83,23 @@ function GameDet() {
                     <h3>{val.gname}</h3>
                     <p>{val.gdesc}</p>
                   </div>
-                  <div className="time"></div>
+                  <div className="time">
+                  <a
+                      datatype="count-down"
+                      data-name="Promotion end in:"
+                      data-bg_color="#FFFFFF"
+                      data-name_color="#008922"
+                      data-border_color="#888888"
+                      data-units="hms"
+                      data-dt={formatDate(new Date(new Date().getTime() + 2 * 60 * 60 * 1000))}
+                      data-timezone="Asia/Bangkok"
+                      style={{ display: 'block', width: '100%', position: 'relative', paddingBottom: '25%' }}
+                      className="tickcounter"
+                      href="//www.tickcounter.com"
+                  >
+                      Countdown
+                  </a>
+                  </div>
                   <div className="game-attr">
                     <p>Platform: {val.platform}</p>
                     <p>Genre: {val.genre}</p>
