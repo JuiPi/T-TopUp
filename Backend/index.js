@@ -207,24 +207,15 @@ app.post('/log-in', (req,res) => {
 
 app.post('/add-game', (req,res) => {
     game = req.body;
-    // packages = req.body.package;
-    // gname = req.body.game.gname;
-    // packages.gname = gname;
     console.log(game);
     // console.log(packages);
     if (!game) {
         return res.status(400).send({ error: true, message: 'Please provide Game information' });
     }
-    // if (!packages) {
-    //     return res.status(400).send({ error: true, message: 'Please provide Package information'})
-    // }
     connection.query("INSERT INTO game SET ? ", game, function (error, results) {
         if (error) throw error;
-        // connection.query("INSERT INTO package SET ? ", packages, function (error, results) {
-        //     if (error) throw error;
-        //     // return res.send({error: false, data: results.affectedRows, message: 'New Package has been created successfully.'});
-        // });
-        return res.send({error: false, data: results.affectedRows, message: 'New Game has been created successfully.'});
+        
+            return res.send({error: false, data: results.affectedRows, message: 'New Game has been created successfully.'});
     });
 
 })
