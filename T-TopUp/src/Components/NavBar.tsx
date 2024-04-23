@@ -19,6 +19,8 @@ function NavBar() {
   console.log(token[0])
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
+
+  //check if token already have in localstorage
   const checkToken = () =>{
     if(token[0]===null){
       setIsLoggedIn(false);

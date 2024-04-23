@@ -40,6 +40,8 @@ function GameDet() {
       });
   };
 
+
+  //fetch when start web
   useEffect(() => {
     getGame();
     getPackages();

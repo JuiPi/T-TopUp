@@ -10,8 +10,11 @@ import { useNavigate } from 'react-router-dom';
 
 function AddADMIN() {
 
+  
   const navigate = useNavigate();
 
+
+  //data for new admin
   const [newAdmin,setNewAdmin] = useState({
     username:"",
     password:"",
