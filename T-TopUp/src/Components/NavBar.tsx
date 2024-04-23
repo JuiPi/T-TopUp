@@ -1,8 +1,16 @@
 import picture from "../assets/Misc/logo.png";
 import mag from "../assets/Misc/search.png";
 import "./NavBar.css";
+import { useState } from "react";
 
 function NavBar() {
+
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const toggleLoggedIn = () => {
+    setIsLoggedIn(!isLoggedIn);
+  };
+  
   return (
     <>
       <nav className="nav1">
@@ -15,8 +23,8 @@ function NavBar() {
         <div className="nav-button">
           <a href="/">Home</a>
           <a href="/#game-zone">Games</a>
-          <a href="/admin-management">User Management</a>
-          <a href="/product-management">Product Management</a>
+          {isLoggedIn && <a href="/admin-management">User Management</a>}
+          {isLoggedIn && <a href="/product-management">Product Management</a>}
         </div>
         <div className="search">
           <a href="/advanced-search">
