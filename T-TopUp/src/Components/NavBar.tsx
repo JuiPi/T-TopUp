@@ -1,20 +1,45 @@
 import picture from "../assets/Misc/logo.png";
 import mag from "../assets/Misc/search.png";
 import "./NavBar.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
 
 function NavBar() {
 
+  const handleLogout = ()=> {
+    // Remove token from localStorage
+    localStorage.removeItem('token');
+  
+    // Optionally, perform other logout-related actions such as redirecting to the login page
+    window.location.href = '/log-in'; // Redirect to the login page
+  }
+
+  const token = useState(localStorage.getItem('token'));
+
+  console.log(token[0])
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const checkToken = () =>{
+    if(token[0]===null){
+      setIsLoggedIn(false);
+    }else{
+      setIsLoggedIn(true);
+    }
+  }
 
   const toggleLoggedIn = () => {
     setIsLoggedIn(!isLoggedIn);
   };
+
+  useEffect(() => {
+    checkToken();
+  }, []);
   
   return (
     <>
       <nav className="nav1">
-        <a href="log-in">Log in</a>
+        {!isLoggedIn ? <a href="log-in">Log in</a>: <a onClick={handleLogout}>Log out</a>}
+
       </nav>
       <switch className="nav2">
         <a href="/">
