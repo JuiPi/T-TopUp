@@ -16,10 +16,6 @@ import EditGame from "../EditGame/EditGame";
 import { useState } from "react";
 
 
-// const token = useState(localStorage.getItem('token'));
-
-// console.log(token[0])
-// const [isLoggedIn, setIsLoggedIn] = useState(false);
 
 export const router = createBrowserRouter([
   {
