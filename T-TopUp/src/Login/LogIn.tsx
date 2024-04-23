@@ -20,9 +20,14 @@ function LogIn() {
           // Send POST request to backend API endpoint
           const response = await Axios.post("http://localhost:8119/log-in", user);
           console.log(response.data); // Log response from the server
-          // Handle success, maybe show a success message to the user
+          if (response.data.token) {
+            // Store the token in localStorage
+            localStorage.setItem('token', response.data.token);
+            // Navigate to the desired page upon successful login
             navigate('/product-management');
-            alert('Login Successful')
+            // Show a success message to the user
+            alert('Login Successful');
+          }
         } catch (error) {
           console.error("Error:", error); // Log any errors
           // Handle error, maybe show an error message to the user

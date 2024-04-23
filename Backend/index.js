@@ -7,11 +7,15 @@ const mysql = require('mysql2');
 const path = require('path');
 
 const dotenv = require('dotenv');
+const jwt = require('jsonwebtoken')
+
 dotenv.config();
 
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
+
+authorize = require("./middle/mw");
 
 var connection = mysql.createConnection({
     host : process.env.MYSQL_HOST,
@@ -197,13 +201,24 @@ app.post('/log-in', (req,res) => {
         }
         if(results.length > 0){
             console.log("Correct");
-            res.status(200).send("Login Successful");
+
+            let jwtToken = jwt.sign({
+                username: username,
+                password: password
+                }, process.env.SECRET, {
+                expiresIn: "2h"
+                });
+
+            res.status(200).json({
+                token: jwtToken,
+                message: "Return Token"
+                });
         } else {
             res.status(500).send("Username or Password is incorrect");
         }
     })
 
-})
+});
 
 app.post('/add-game', (req,res) => {
     game = req.body;

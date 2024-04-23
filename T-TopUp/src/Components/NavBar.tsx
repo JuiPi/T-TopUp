@@ -2,6 +2,16 @@ import picture from "../assets/Misc/logo.png";
 import mag from "../assets/Misc/search.png";
 import "./NavBar.css";
 
+
+const logout = ()=> {
+  // Remove token from localStorage
+  localStorage.removeItem('token');
+
+  // Optionally, perform other logout-related actions such as redirecting to the login page
+  window.location.href = '/login'; // Redirect to the login page
+}
+
+
 function NavBar() {
   return (
     <>
