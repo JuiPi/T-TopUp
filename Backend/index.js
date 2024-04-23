@@ -123,14 +123,6 @@ app.delete('/admin/:username',async (req,res)=>{
             return res.status(500).send("Error beginning transaction");
         }
 
-        connection.query('DELETE FROM manage_game WHERE username = ?', [admin_username], (error1, results1) => {
-            if (error1) {
-                connection.rollback(() => {
-                    console.error("Error deleting from manage_game:", error1);
-                    res.status(500).send("Error deleting from manage_game");
-                });
-            }
-
             connection.query('DELETE FROM login WHERE username = ?', [admin_username], (error2, results2) => {
                 if (error2) {
                     connection.rollback(() => {
@@ -161,9 +153,8 @@ app.delete('/admin/:username',async (req,res)=>{
                 });
             });
         });
-    });
+});
             
-})
 
 app.get('/search',(req,res)=>{
     const squery = req.query.query;

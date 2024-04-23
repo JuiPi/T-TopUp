@@ -232,6 +232,5 @@ input:checked + .method-icon img {
     position: absolute;
     height: 50px;
     width: 200px;
-    background-color: red;
     margin: -270px 0 0 980px;
 }

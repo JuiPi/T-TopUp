@@ -43,11 +43,11 @@ function SearchResult() {
 
       <body>
         <div className="filter-content">
-          <h1>Search Result(s)</h1>
+          <h1>Search Results by "{type}" for "{query}"</h1>
           <hr></hr>
 
 
-          <p className="found"># Games Found: {search.length}</p>
+          <p className="found">{search.length} Games Found: </p>
         </div>
         
 
