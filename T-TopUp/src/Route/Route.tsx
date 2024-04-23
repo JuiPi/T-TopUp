@@ -13,6 +13,13 @@ import SearchResult from "../SearchResult/SearchResult";
 import GameDet from "../GameDet/GameDet";
 import AddGame from "../AddGame/AddGame";
 import EditGame from "../EditGame/EditGame";
+import { useState } from "react";
+
+
+// const token = useState(localStorage.getItem('token'));
+
+// console.log(token[0])
+// const [isLoggedIn, setIsLoggedIn] = useState(false);
 
 export const router = createBrowserRouter([
   {
@@ -23,7 +30,7 @@ export const router = createBrowserRouter([
       { path: "about-us", element: <Aboutus /> },
       { path: "product-management", element: <ProdMng /> },
       { path: "add-admin", element: <AddADMIN /> },
-      { path: "admin-management", element: <UserManagement /> },
+      { path: "admin-management", element:  <UserManagement />} ,
       { path: "edit-admin/:username", element: <EditADMIN /> },
       { path: "game-detail/:gameName", element: <GameDet/> },
       { path: "payment-success", element: <PaymentSuccessful /> },
