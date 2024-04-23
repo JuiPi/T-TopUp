@@ -18,7 +18,7 @@ This is a full-stack web application built using Vite + TypeScript for the front
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/yourusername/T-TopUp.git
+    git clone https://github.com/JuiPi/T-TopUp.git
     ```
 
 2. Navigate to the project directory:
