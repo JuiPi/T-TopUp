@@ -442,12 +442,15 @@ function EditGame() {
             </section>
 
             <div className="flex justify-end">
-              <button
-                type="button"
-                className="w-32 h-11 bg-green-500 text-lg text-white text-center font-semibold rounded-md"
-              >
-                Save
-              </button>
+              <a href="/product-management">
+                <button
+                  type="button"
+                  className="w-32 h-11 bg-green-500 text-lg text-white text-center font-semibold rounded-md"
+                  >
+                  Save
+                </button>
+              </a>
+              
                 <button
                   type="button"
                   className="w-32 h-11 bg-red-500 text-lg text-white text-center font-semibold rounded-md ml-7"
